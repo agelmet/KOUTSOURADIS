@@ -9,7 +9,7 @@ E=html.escape
 PHONE='698 588 0004'; TEL='+306985880004'; MAIL='gkoutsouradis.therapist@gmail.com'
 ADDR='Μιαούλη 54, 121 31 Περιστέρι'; MAPQ='https://www.google.com/maps/search/?api=1&query=%CE%9C%CE%B9%CE%B1%CE%BF%CF%8D%CE%BB%CE%B7+54%2C+%CE%A0%CE%B5%CF%81%CE%B9%CF%83%CF%84%CE%AD%CF%81%CE%B9+121+31'
 MAPEMB='https://maps.google.com/maps?q=38.0049331,23.6908265&z=16&output=embed'
-DOMAIN='giorgoskoutsouradis.gr'
+DOMAIN='gkoutsouradis.gr'
 
 # ---------- μικρά εργαλεία ----------
 ICON={
@@ -43,10 +43,11 @@ def icon(n,cls='ic'):
     return '<svg class="%s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>'%(cls,inner)
 
 SYM=('<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mk" viewBox="-6 -6 198 216">'
- '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-s,#C9D6B4);stroke-width:var(--mk-sw,10);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m2,0)"/>'
- '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-o,#B4502A);stroke-width:var(--mk-w,4);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m1,0)"/>'
- '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-g,#4D6142);stroke-width:var(--mk-w,4);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m3,0)"/>'
+ '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-s,#C6C690);stroke-width:var(--mk-sw,10);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m2,0)"/>'
+ '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-o,#9D4125);stroke-width:var(--mk-w,4);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m1,0)"/>'
+ '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-g,#404A1E);stroke-width:var(--mk-w,4);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m3,0)"/>'
  '</symbol></defs></svg>')%(MP['sg'],MP['or'],MP['dg'])
+BYMK='<img class="by-mk" src="assets/img/giorgos-koutsouradis-logo-icon.svg" width="260" height="236" alt="" loading="lazy">'
 def mark(cls='mk'): return '<svg class="%s" viewBox="-6 -6 198 216" aria-hidden="true"><use href="#mk"/></svg>'%cls
 
 IMGS={
@@ -58,6 +59,16 @@ IMGS={
  'book':('chartografontas-ti-stadiodromia-karakasidou-koutsouradis-vivlio',[400,670],670,948,'Το εξώφυλλο του βιβλίου «Χαρτογραφώντας τη σταδιοδρομία» των Ειρήνης Καρακασίδου και Γιώργου Κουτσουραδή, Εκδόσεις Παρισιάνου'),
  'p2025':('poster-19o-synedrio-psychologikis-erevnas-ioannina-2025',[560,1206],1206,1997,'Η αναρτημένη ανακοίνωση των Γ. Κουτσουραδή και Ε. Καρακασίδου στο 19ο Πανελλήνιο Συνέδριο Ψυχολογικής Έρευνας, Ιωάννινα 2025'),
  'p2023':('poster-8o-synedrio-symvouleftikis-psychologias-2023',[560,1125],1125,1837,'Η αναρτημένη ανακοίνωση των Γ. Κουτσουραδή και Ε. Καρακασίδου στο 8ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας, Αθήνα 2023'),
+ 'patra':('9o-panellinio-synedrio-symvouleftikis-psychologias-patra-2025',[1143],1143,200,'Το λογότυπο του 9ου Πανελλήνιου Συνεδρίου Συμβουλευτικής Ψυχολογίας, Πάτρα, 6–9 Νοεμβρίου 2025'),
+ 'pa_eis':('giorgos-koutsouradis-9o-synedrio-symvouleftikis-patra-2025-eisigisi',[480,900,1200],1200,1600,'Η συνεδρία του Γιώργου Κουτσουραδή στο 9ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας στην Πάτρα, στο τέλος της παρουσίασης'),
+ 'pa_om':('giorgos-koutsouradis-9o-synedrio-symvouleftikis-patra-2025-omada',[640,1200,1600],1600,1200,'Ο Γιώργος Κουτσουραδής με συναδέλφους στο 9ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας, Πανεπιστήμιο Πατρών 2025'),
+ 'thess':('8o-panellinio-synedrio-anaptyxiakis-psychologias-thessaloniki-2026',[650],650,300,'Το λογότυπο του 8ου Πανελλήνιου Συνεδρίου Αναπτυξιακής Ψυχολογίας «τὰ πάντα ῥεῖ…», Θεσσαλονίκη, 15–18 Οκτωβρίου 2026'),
+ 'th_om':('giorgos-koutsouradis-8o-synedrio-anaptyxiakis-thessaloniki-2026-omada',[480,900,1200],1200,1600,'Ο Γιώργος Κουτσουραδής με τους ομιλητές της συνεδρίας στο 8ο Πανελλήνιο Συνέδριο Αναπτυξιακής Ψυχολογίας, Θεσσαλονίκη 2026'),
+ 'th_eis':('giorgos-koutsouradis-8o-synedrio-anaptyxiakis-thessaloniki-2026-eisigisi',[640,1200,1600],1600,1200,'Ο Γιώργος Κουτσουραδής παρουσιάζει την εισήγηση «Συμβουλευτική Ψυχολογία στην Τρίτη Ηλικία» στο 8ο Πανελλήνιο Συνέδριο Αναπτυξιακής Ψυχολογίας'),
+ 'th_vima':('giorgos-koutsouradis-8o-synedrio-anaptyxiakis-thessaloniki-2026-vima',[480,900,1200],1200,1600,'Ο Γιώργος Κουτσουραδής στο βήμα του 8ου Πανελλήνιου Συνεδρίου Αναπτυξιακής Ψυχολογίας, Θεσσαλονίκη 2026'),
+ 'es_dia':('esyom-symposio-atomiki-symvouleftiki-omotimon-patra-2025-diafaneia',[640,1268],1268,726,'Η πρώτη διαφάνεια της εισήγησης «Ατομική Συμβουλευτική Ομοτίμων» των Γ. Κουτσουραδή, Γ. Σύρακα και Α. Σωτηρίου'),
+ 'es_om':('esyom-symposio-atomiki-symvouleftiki-omotimon-patra-2025-omada',[320],320,200,'Οι ομιλητές του συμποσίου της Ε.ΣΥ.ΟΜ για τη Συμβουλευτική Ομοτίμων, με τον Γιώργο Κουτσουραδή'),
+ 'es_pan':('esyom-symposio-atomiki-symvouleftiki-omotimon-patra-2025-panel',[320],320,180,'Ο Γιώργος Κουτσουραδής στο πάνελ του συμποσίου για τη Συμβουλευτική Ομοτίμων'),
  'ioannina':('19o-panellinio-synedrio-psychologikis-erevnas-ioannina',[1003],1003,260,'Το λογότυπο του 19ου Πανελλήνιου Συνεδρίου Ψυχολογικής Έρευνας, Ιωάννινα 2025'),
 }
 def img(k,sizes='100vw',cls='',eager=False,lb=True,alt=None):
@@ -88,17 +99,17 @@ def header(cur):
     mob+='<a href="to-ergo-mou.html">Το έργο μου</a><div class="msub">'+''.join('<a href="%s">%s</a>'%x for x in WORK)+'</div><a href="epikoinonia.html">Επικοινωνία</a>'
     home='#top' if cur=='index.html' else 'index.html'
     return ('<a class="skip" href="#main">Μετάβαση στο περιεχόμενο</a><div class="prog" aria-hidden="true"></div>'
-     '<header class="hd" id="hd"><div class="hd-in"><a class="brand" href="%s" aria-label="Γιώργος Κουτσουραδής — αρχική σελίδα">%s<span class="bw"><b>Γιώργος Κουτσουραδής</b><small>Συνθετικός Ψυχοθεραπευτής</small></span></a>'
+     '<header class="hd" id="hd"><div class="hd-in"><a class="brand" href="%s" aria-label="Γιώργος Κουτσουραδής — αρχική σελίδα"><img class="lgh" src="assets/img/giorgos-koutsouradis-logo-header.svg" width="640" height="132" alt="Γιώργος Κουτσουραδής – Σύμβουλος Ψυχικής Υγείας"></a>'
      '<nav class="nav" aria-label="Κύριο μενού">%s</nav><a class="hcta" href="tel:%s">%s<span>%s</span></a>'
      '<button class="burger" type="button" aria-label="Άνοιγμα μενού" aria-expanded="false" aria-controls="mnav"><i></i><i></i></button></div></header>'
      '<div class="mnav" id="mnav" hidden><button class="mx" type="button" aria-label="Κλείσιμο μενού">%s</button><nav aria-label="Μενού κινητού">%s</nav>'
-     '<div class="mfoot"><a href="tel:%s">%s %s</a><a href="mailto:%s">%s</a></div></div>')%(home,mark('mk hmk'),nav,TEL,icon('phone','bi'),PHONE,icon('x'),mob,TEL,icon('phone','bi'),PHONE,MAIL,MAIL)
+     '<div class="mfoot"><a href="tel:%s">%s %s</a><a href="mailto:%s">%s</a></div></div>')%(home,nav,TEL,icon('phone','bi'),PHONE,icon('x'),mob,TEL,icon('phone','bi'),PHONE,MAIL,MAIL)
 
 def footer(cur):
     home='#top' if cur=='index.html' else 'index.html'
     col=lambda t,items: '<div class="fcol"><p class="fh">%s</p>%s</div>'%(t,''.join('<a href="%s">%s</a>'%i for i in items))
     return ('<footer class="ft" data-amb="profiles"><div class="ft-in">'
-     '<div class="fbrand"><a class="brand" href="%s" aria-label="Αρχική">%s<span class="bw"><b>Γιώργος Κουτσουραδής</b><small>Σύμβουλος Ψυχικής Υγείας & Συνθετικός Ψυχοθεραπευτής</small></span></a>'
+     '<div class="fbrand"><a class="brand lgcard" href="%s" aria-label="Γιώργος Κουτσουραδής — αρχική σελίδα"><img class="lgf" src="assets/img/giorgos-koutsouradis-logo.svg" width="502" height="370" alt="Γιώργος Κουτσουραδής – Σύμβουλος Ψυχικής Υγείας, Ψυχοθεραπευτής Συνθετικής Προσέγγισης" loading="lazy" decoding="async"></a>'
      '<p>Συμβουλευτική και ψυχοθεραπεία ενηλίκων στο Περιστέρι και online. Ένας ασφαλής χώρος κατανόησης, σύνδεσης και προσωπικής εξέλιξης.</p>'
      '<p class="fct"><a href="tel:%s">%s</a><a href="mailto:%s">%s</a><a href="%s" target="_blank" rel="noopener">%s</a></p></div>'
      '%s%s%s</div><div class="ft-bot"><span>© 2026 Γιώργος Κουτσουραδής</span><span class="fl"><a href="privacy.html">Απόρρητο &amp; cookies</a>'
@@ -106,7 +117,7 @@ def footer(cur):
      '<div class="mbar"><a href="tel:%s">%s<span>Κλήση</span></a><a href="epikoinonia.html#rantevou">%s<span>Ραντεβού</span></a><a href="%s" target="_blank" rel="noopener">%s<span>Οδηγίες</span></a></div>'
      '<button class="totop" type="button" aria-label="Επιστροφή στην κορυφή"><svg viewBox="0 0 44 44" aria-hidden="true"><circle class="tr" cx="22" cy="22" r="20"/><circle class="tp" cx="22" cy="22" r="20" pathLength="1"/></svg>%s</button>'
      '<div class="lb" hidden><button class="lbx" type="button" aria-label="Κλείσιμο">%s</button><img alt=""></div>'
-    )%(home,mark('mk fmk'),TEL,PHONE,MAIL,MAIL,MAPQ,ADDR,
+    )%(home,TEL,PHONE,MAIL,MAIL,MAPQ,ADDR,
        col('Υπηρεσίες',NAV_SERV),col('Προσεγγίσεις',[(a+'.html',t) for a,t,_ in APPR]),col('Το έργο μου',[('poios-eimai.html','Ποιος είμαι')]+WORK+[('epikoinonia.html','Επικοινωνία')]),
        TEL,icon('phone','bi'),icon('mail','bi'),MAPQ,icon('pin','bi'),icon('chev','bi up'),icon('x'))
 
@@ -196,7 +207,7 @@ home=('<section class="hero" id="top" data-amb="wash"><div class="hero-bg" aria-
  # work
  '<section class="work" data-amb="lines2"><div class="wrap"><div class="sh">%s%s<p class="sh-p rv">Η κλινική δουλειά συνομιλεί με την έρευνα και τη γραφή: ένα βιβλίο για τη σταδιοδρομία, ανακοινώσεις σε πανελλήνια συνέδρια και κείμενα για την ανθρώπινη εμπειρία.</p></div>'
  '<div class="wk-grid"><a class="wk wk-book" href="vivlia.html"><div class="wk-cv">%s</div><div class="wk-t"><span class="tag">Βιβλίο · 2025</span><h3>Χαρτογραφώντας τη σταδιοδρομία</h3><p>Θεωρία, αυτογνωσία και πράξη στη σύγχρονη συμβουλευτική. Με την Ειρήνη Καρακασίδου, Επιστημονικές Εκδόσεις Παρισιάνου.</p><span class="sc-go">Το βιβλίο %s</span></div></a>'
- '<a class="wk wk-c" href="synedria.html">%s<span class="tag">Συνέδρια</span><h3>Ανακοινώσεις σε πανελλήνια συνέδρια</h3><p>Ιωάννινα 2025 · Αθήνα 2023: προγράμματα παρέμβασης για ενήλικες με ψυχοκοινωνικές δυσκολίες.</p><span class="sc-go">Τα συνέδρια %s</span></a>'
+ '<a class="wk wk-c" href="synedria.html">%s<span class="tag">Συνέδρια</span><h3>Ανακοινώσεις σε πανελλήνια συνέδρια</h3><p>Θεσσαλονίκη 2026 · Πάτρα 2025 · Ιωάννινα 2025 · Αθήνα 2023: η συμβουλευτική στην τρίτη ηλικία, η συμβουλευτική ομοτίμων και προγράμματα παρέμβασης για ενήλικες.</p><span class="sc-go">Τα συνέδρια %s</span></a>'
  '<a class="wk wk-c" href="arthro-aftosympnonia-triti-ilikia.html">%s<span class="tag">Άρθρο</span><h3>Αυτοσυμπόνια στην τρίτη ηλικία</h3><p>Μια πιο ήπια σχέση με τον εαυτό στα χρόνια της ωρίμανσης.</p><span class="sc-go">Διαβάστε το %s</span></a></div></div></section>'
  # faq
  '<section class="faq" data-amb="dots2"><div class="wrap faq-in"><div class="faq-h">%s%s<div class="glance rv"><p class="g-t">Με μια ματιά</p><dl>'
@@ -379,39 +390,65 @@ for i,(slug,t,d) in enumerate(APPR):
 wk=('<section class="phero" id="top" data-amb="wash"><div class="wrap">%s%s<h1 class="h1 h1-s"><span class="w-name">Το έργο μου</span><span class="h1-role">Βιβλία, συνέδρια και κείμενα του Γιώργου Κουτσουραδή</span></h1>'
  '<p class="display h-words">Η κλινική δουλειά <em>συνομιλεί</em> με την έρευνα και τη γραφή.</p></div></section>'
  '<section class="wk3" data-amb="lines"><div class="wrap wk3-g">'
- '<a class="w3 tilt" href="synedria.html" style="--i:0"><span class="w3-n">01</span>%s<h2>Συνέδρια</h2><p>Ανακοινώσεις στο 19ο Πανελλήνιο Συνέδριο Ψυχολογικής Έρευνας (Ιωάννινα, 2025) και στο 8ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας (Αθήνα, 2023).</p><span class="sc-go">Δείτε τα %s</span></a>'
+ '<a class="w3 tilt" href="synedria.html" style="--i:0"><span class="w3-n">01</span>%s<h2>Συνέδρια</h2><p>Εισηγήσεις και ανακοινώσεις σε πανελλήνια συνέδρια: Αναπτυξιακής Ψυχολογίας (Θεσσαλονίκη, 2026), Συμβουλευτικής Ψυχολογίας (Πάτρα, 2025 · Αθήνα, 2023) και Ψυχολογικής Έρευνας (Ιωάννινα, 2025).</p><span class="sc-go">Δείτε τα %s</span></a>'
  '<a class="w3 tilt" href="vivlia.html" style="--i:1"><span class="w3-n">02</span>%s<h2>Βιβλία</h2><p>«Χαρτογραφώντας τη σταδιοδρομία: Θεωρία, αυτογνωσία και πράξη στη σύγχρονη συμβουλευτική», Εκδόσεις Παρισιάνου, 2025.</p><span class="sc-go">Το βιβλίο %s</span></a>'
  '<a class="w3 tilt" href="arthra.html" style="--i:2"><span class="w3-n">03</span>%s<h2>Κείμενα &amp; Άρθρα</h2><p>Κείμενα για την ψυχοθεραπεία, τη συμβουλευτική, την προσωπική ανάπτυξη και τη σύγχρονη ανθρώπινη εμπειρία.</p><span class="sc-go">Διαβάστε %s</span></a>'
  '</div></section>'+cta_band())%(crumbs([('to-ergo-mou.html','Το έργο μου')]),kick('Επιστημονικό έργο'),icon('mic','ic'),icon('arrow','bi'),icon('book','ic'),icon('arrow','bi'),icon('pen','ic'),icon('arrow','bi'))
 page('to-ergo-mou.html','Το έργο μου: βιβλία, συνέδρια, άρθρα | Γιώργος Κουτσουραδής','Το επιστημονικό έργο του Γιώργου Κουτσουραδή: το βιβλίο «Χαρτογραφώντας τη σταδιοδρομία», ανακοινώσεις σε πανελλήνια συνέδρια ψυχολογίας και κείμενα.',wk,crumbs_ld=[('to-ergo-mou.html','Το έργο μου')])
 
-CONF=[dict(y='2025',n='19ο Πανελλήνιο Συνέδριο Ψυχολογικής Έρευνας',th='«Μοιραζόμαστε τις ομοιότητές μας, γιορτάζουμε τις διαφορές μας»',
+CONF=[dict(y='2026',n='8ο Πανελλήνιο Συνέδριο Αναπτυξιακής Ψυχολογίας',th='«τὰ πάντα ῥεῖ…»',kind='Εισήγηση',
+   pl='Θεσσαλονίκη · 15–18 Οκτωβρίου 2026',au='Γιώργος Κουτσουραδής, υποψήφιος Διδάκτωρ Συμβουλευτικής Ψυχολογίας · Ειρήνη Καρακασίδου, Επίκουρη Καθηγήτρια Παντείου Πανεπιστημίου',
+   t='Παρεμβάσεις συμβουλευτικής ψυχολογίας στην τρίτη ηλικία, με έμφαση στη στήριξη των αναπτυξιακών διεργασιών και της ψυχοσυναισθηματικής προσαρμογής κατά την ύστερη ενήλικη ζωή',
+   s='Η παρούσα εισήγηση επικεντρώνεται στις παρεμβάσεις συμβουλευτικής ψυχολογίας στην τρίτη ηλικία, με έμφαση στη στήριξη των αναπτυξιακών διεργασιών και της ψυχοσυναισθηματικής προσαρμογής κατά την ύστερη ενήλικη ζωή. Η τρίτη ηλικία προσεγγίζεται ως ένα ενεργό αναπτυξιακό στάδιο, το οποίο χαρακτηρίζεται από σημαντικές ψυχοκοινωνικές μεταβάσεις, επαναπροσδιορισμό ρόλων και αυξημένη ανάγκη προσαρμογής σε αλλαγές που αφορούν την υγεία, τις κοινωνικές σχέσεις και τη βιωμένη εμπειρία του χρόνου.',
+   more=['Οι παρεμβάσεις που παρουσιάζονται υλοποιούνται σε κοινοτικά πλαίσια, όπως οι Λέσχες Φιλίας και τα ΚΑΠΗ των Δήμων, και έχουν πολυδιάστατο χαρακτήρα, καθώς στοχεύουν στην ενίσχυση της ψυχικής ανθεκτικότητας, την υποστήριξη στη διαχείριση απωλειών και τη διευκόλυνση της συναισθηματικής έκφρασης και αυτογνωσίας. Μέσα από ατομικές και ομαδικές συναντήσεις εφαρμόζονται τεχνικές ενεργητικής ακρόασης, ενδυνάμωσης, ενίσχυσης της αυτοεκτίμησης και καλλιέργειας δεξιοτήτων προσαρμογής, οι οποίες υποστηρίζουν τη διατήρηση της ψυχικής ισορροπίας και της αναπτυξιακής συνέχειας.',
+         'Ιδιαίτερη έμφαση δίνεται στη δημιουργία ενός ασφαλούς και αποδοτικού θεραπευτικού πλαισίου, όπου οι ηλικιωμένοι ενθαρρύνονται να μοιραστούν εμπειρίες, να επεξεργαστούν τις αλλαγές που συνοδεύουν τη γήρανση και να ενισχύσουν το αίσθημα του ανήκειν και της κοινωνικής σύνδεσης. Η συμβουλευτική προσέγγιση είναι κυρίως προσωποκεντρική, εστιάζοντας στις ιδιαίτερες ανάγκες, τις προσωπικές διαδρομές και τις αξίες των συμμετεχόντων, ενώ η αξιολόγηση της αποτελεσματικότητας των παρεμβάσεων βασίζεται κυρίως σε ποιοτικά δεδομένα, όπως προσωπικές αφηγήσεις και βιωματικές μαρτυρίες. Οι παρεμβάσεις συμβουλευτικής ψυχολογίας στην τρίτη ηλικία αναδεικνύονται ως ουσιαστικός παράγοντας ενίσχυσης της ψυχοσυναισθηματικής προσαρμογής και της ενεργού συμμετοχής των ηλικιωμένων στην κοινότητα.'],
+   kw='τρίτη ηλικία, παρεμβάσεις συμβουλευτικής, αναπτυξιακές διεργασίες, ψυχοσυναισθηματική προσαρμογή, ενεργός γήρανση',
+   ph=['th_eis','th_om','th_vima'],logo='thess'),
+  dict(y='2025',n='9ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας',th='',kind='Εισήγηση',
+   pl='Πανεπιστήμιο Πατρών, Πάτρα · 6–9 Νοεμβρίου 2025',au='Γιώργος Κουτσουραδής',
+   t='Παρεμβάσεις συμβουλευτικής ψυχολογίας σε άτομα τρίτης ηλικίας',
+   s='Οι παρεμβάσεις συμβουλευτικής ψυχολογίας σε άτομα τρίτης ηλικίας που υλοποιούνται σε Λέσχες Φιλίας έχουν πολυδιάστατο χαρακτήρα και αποσκοπούν στην ενίσχυση της ψυχικής ανθεκτικότητας, την υποστήριξη στη διαχείριση απωλειών (όπως η απώλεια συντρόφου, φίλων ή ρόλων), καθώς και στην προώθηση της κοινωνικής ένταξης και ενεργού γήρανσης. Μέσα από ατομικές και ομαδικές συναντήσεις, εφαρμόζονται τεχνικές ενδυνάμωσης, ενεργητικής ακρόασης, ενίσχυσης της αυτοεκτίμησης και καλλιέργειας της αυτογνωσίας.',
+   more=['Οι συμμετέχοντες ενθαρρύνονται να μοιραστούν εμπειρίες, να εκφράσουν συναισθήματα και να επεξεργαστούν τις αλλαγές που σχετίζονται με τη γήρανση, ενισχύοντας παράλληλα το αίσθημα του ανήκειν και της αλληλοϋποστήριξης.',
+         'Η προσέγγιση είναι προσωποκεντρική, εστιάζοντας στις ιδιαίτερες ανάγκες, τις προσωπικές διαδρομές και τις αξίες των ηλικιωμένων. Η αξιολόγηση της αποτελεσματικότητας της παρέμβασης προβλέπεται να βασιστεί κυρίως σε ποιοτικά δεδομένα, μέσα από προσωπικές αφηγήσεις, συνεντεύξεις και βιωματικές μαρτυρίες των συμμετεχόντων, με στόχο την αποτύπωση των αλλαγών στην ψυχοσυναισθηματική κατάσταση και τη βελτίωση της καθημερινής ζωής τους. Η ενδυνάμωση των ηλικιωμένων μέσω τέτοιων δράσεων δεν αφορά μόνο την ατομική ευημερία, αλλά συμβάλλει και στη δημιουργία πιο συνεκτικών και υποστηρικτικών κοινοτήτων.'],
+   ph=['pa_om','pa_eis'],logo='patra'),
+  dict(y='2025',n='Συμπόσιο της Ε.ΣΥ.ΟΜ · 9ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας',th='«Ομαδική και Ατομική Συμβουλευτική Ομοτίμων: εφαρμοσμένα παραδείγματα με διαφορετικές ομάδες στόχο»',kind='Συμπόσιο · 4η εισήγηση',
+   pl='Πάτρα · Νοέμβριος 2025',au='Γιώργος Κουτσουραδής · Γιώργος Σύρακας · Αγγελική Σωτηρίου, Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)',
+   t='Ατομική Συμβουλευτική Ομοτίμων',
+   s='Η Συμβουλευτική Ομοτίμων αποτελεί μια μορφή ενδυνάμωσης και ψυχοκοινωνικής υποστήριξης, που παρέχεται από εκπαιδευμένους εθελοντές, συχνά μη επαγγελματίες, με δεξιότητες ενεργητικής ακρόασης, συμβουλευτικής και αποτελεσματικής επικοινωνίας. Βασίζεται στην ανθρώπινη ανάγκη για σύνδεση με άτομα που βρίσκονται σε παρόμοια φάση ζωής ή έχουν κοινές εμπειρίες, ανησυχίες και προκλήσεις.',
+   more=['Αν και η ομαδική συμβουλευτική αποτελεί βασικό άξονα της δράσης της Ελληνικής Επιστημονικής Εταιρείας Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ), τελευταία αναπτύσσεται δυναμικά και η ατομική συμβουλευτική ομηλίκων/ομοτίμων σε ενήλικα άτομα. Στην Ελλάδα, η ατομική συμβουλευτική ομοτίμων είχε ξεκινήσει να εφαρμόζεται από το 1995 στο Συμβουλευτικό Κέντρο Ομηλίκων του ΕΚΠΑ, όπου εκπαιδευμένοι φοιτητές προσέφεραν ατομική ή ομαδική συμβουλευτική σε συμφοιτητές τους. Η ανάγκη κάποιων συμβουλευόμενων για ατομική, πιο εστιασμένη υποστήριξη σε συνδυασμό με τη διάθεση των μελών της Ε.ΣΥ.ΟΜ να προσφέρουν υποστήριξη μέσα από τις προσωπικές τους εμπειρίες, οδήγησε στη θεσμοθέτηση της ατομικής πρακτικής.',
+         'Στην παρουσίαση αναπτύσσονται ο τρόπος με τον οποίο εφαρμόζεται η δράση σε συγκεκριμένες θεματικές περιοχές (π.χ. χωρισμένοι γονείς, νέοι σε επαγγελματική μετάβαση, γονείς ενήλικων παιδιών κ.ά.), η διαδικασία συντονισμού της δράσης, από την υποβολή αιτημάτων μέσω της ιστοσελίδας της Ε.ΣΥ.ΟΜ έως τη σύζευξη συμβουλευόμενου και συμβούλου, το εγχειρίδιο Ατομικής Συμβουλευτικής Ομοτίμων, το οποίο δημιουργήθηκε βάσει διεθνούς βιβλιογραφίας, και τέλος η ομαδική εποπτεία και ο ρόλος της για τη διασφάλιση της ποιότητας της υποστήριξης, της διαρκούς ανατροφοδότησης και βελτίωσης της πρακτικής. Η παρουσίαση στοχεύει να αναδείξει την αξία της ατομικής συμβουλευτικής μεταξύ ομοτίμων ως εργαλείο πρόληψης, ενδυνάμωσης και ανάπτυξης, σε ένα πλήρως δομημένο και εποπτευόμενο πλαίσιο.',
+         '<b>Το συμπόσιο.</b> Η συμβουλευτική ομηλίκων/ομοτίμων (Σ.Ο) είναι ένα σύστημα προσφοράς και αποδοχής βοήθειας μεταξύ ατόμων σε παρόμοια φάση ζωής και με παρόμοια προβλήματα. Στηρίζεται στις βασικές αρχές του αμοιβαίου σεβασμού, της υπευθυνότητας και της κατανόησης. Η Ε.ΣΥ.ΟΜ, στα 10 και πλέον χρόνια της λειτουργίας της, υποστηρίζει τη δημιουργία και λειτουργία προγραμμάτων Συμβουλευτικής Ομοτίμων, ομαδικών και ατομικών. Στο συμπόσιο παρουσιάστηκαν το πρόγραμμα «We Support our MS» (WSOMS) για ασθενείς με Πολλαπλή Σκλήρυνση, η μεθοδολογία της Ε.ΣΥ.ΟΜ για την ενδυνάμωση υπαρχόντων προγραμμάτων Σ.Ο σε διάφορους φορείς, μια ομάδα ομοτίμων για ψυχοθεραπευτές και, τέλος, η ατομική Συμβουλευτική Ομοτίμων.'],
+   kw='Ατομική Συμβουλευτική Ομοτίμων, Ε.ΣΥ.ΟΜ, εγχειρίδιο δράσης, θεματικές υποστήριξης, εποπτεία',
+   ph=['es_dia','es_om','es_pan'],logo=None),
+  dict(y='2025',n='19ο Πανελλήνιο Συνέδριο Ψυχολογικής Έρευνας',th='«Μοιραζόμαστε τις ομοιότητές μας, γιορτάζουμε τις διαφορές μας»',
    pl='Συνεδριακό Κέντρο «Κάρολος Παπούλιας», Πανεπιστήμιο Ιωαννίνων · 7–11 Μαΐου 2025',t='Πρόγραμμα Παρέμβασης Συμβουλευτικής Ψυχολογίας σε ενήλικες με ψυχοκοινωνικές δυσκολίες, λήπτες φαρμακευτικής αγωγής',
    s='Η εργασία παρουσιάζει ένα ομαδικό ψυχοεκπαιδευτικό πρόγραμμα Συμβουλευτικής Ψυχολογίας για 16 ενήλικες ενός Κέντρου Ημέρας στην Αττική: οκτώ εβδομαδιαίες συναντήσεις των 50 λεπτών, με ασκήσεις αυτοσυμπόνιας, ενσυνειδητότητας και ευγνωμοσύνης, για τη σχέση με τον εαυτό και με τους άλλους.',
    more=['Τα προγράμματα κοινωνικοποίησης απευθύνονται σε ενήλικες με κοινωνικές δυσκολίες που χρειάζονται καθημερινή απασχόληση. Στηρίζουν τη συνέχεια της θεραπείας και την πρόληψη των υποτροπών, την ανάπτυξη δεξιοτήτων, την κοινωνική ένταξη και την επαγγελματική αποκατάσταση, την αντιμετώπιση του στίγματος και της απόσυρσης, και το δικαίωμα αυτών των ανθρώπων να είναι ενεργά μέλη της κοινωνίας.',
          'Η έρευνα στοχεύει στην ενίσχυση της αυτοσυμπόνιας, του σχετίζεσθαι και της ενσυνειδητότητας, και εξετάζει τον ρόλο της Συμβουλευτικής Ψυχολογίας και της θετικότητας σε αυτόν τον πληθυσμό: πώς επηρεάζονται, πριν και μετά το πρόγραμμα, τα θετικά και αρνητικά συναισθήματα, η επίγνωση προσοχής, η ευγνωμοσύνη και η ποιότητα ζωής των συμμετεχόντων.',
          'Το πρόγραμμα περιλαμβάνει ασκήσεις αυτοσυμπόνιας, ενσυνειδητότητας, ευγνωμοσύνης, απόλαυσης θετικών εμπειριών και αξιοποίησης των δυνάμεων του χαρακτήρα. Έγινε σε δύο ομάδες των οκτώ ατόμων. Η αξιολόγηση έγινε με τέσσερα ψυχομετρικά εργαλεία, πριν, αμέσως μετά και έξι μήνες μετά την παρέμβαση. Κατά την υποβολή της περίληψης, η έρευνα βρισκόταν σε εξέλιξη.'],
-   ph=['p2025'],logo='ioannina'),
+   ph=['p2025'],logo='ioannina',kind='Αναρτημένη ανακοίνωση',au='Γιώργος Κουτσουραδής · Ειρήνη Καρακασίδου'),
   dict(y='2023',n='8ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας & 3ο Πανελλήνιο Συνέδριο Θετικής Ψυχολογίας',th='«Συναντήσεις, Αφηγήσεις, Προκλήσεις»',
    pl='Πάντειο Πανεπιστήμιο Κοινωνικών και Πολιτικών Επιστημών, Αθήνα · 9–12 Νοεμβρίου 2023',t='Πρόγραμμα παρεμβάσεων Θετικής Ψυχολογίας σε ενήλικες με ψυχοκοινωνικές δυσκολίες, λήπτες φαρμακευτικής αγωγής',
    s='Η αναρτημένη ανακοίνωση παρουσιάζει ένα ψυχοεκπαιδευτικό πρόγραμμα Θετικής Ψυχολογίας για 16 ενήλικες σε Κέντρο Ημέρας στην Αττική. Σε οκτώ εβδομαδιαίες συναντήσεις, οι συμμετέχοντες εξασκήθηκαν στην αυτοσυμπόνια, στην ενσυνειδητότητα και στην ευγνωμοσύνη, στην απόλαυση θετικών εμπειριών και στην αξιοποίηση των δυνάμεων του χαρακτήρα τους.',
    more=['Τα προγράμματα κοινωνικοποίησης απευθύνονται σε ενήλικες με ψυχοκοινωνικές δυσκολίες και προσφέρουν καθημερινή απασχόληση, ανάπτυξη δεξιοτήτων, κοινωνική ένταξη και επαγγελματική αποκατάσταση. Στόχος τους είναι επίσης η συνέχεια της θεραπείας, η πρόληψη των υποτροπών, η αντιμετώπιση του στίγματος και της κοινωνικής απόσυρσης.',
          'Η μελέτη αφορούσε ενήλικες με ψυχοκοινωνικές δυσκολίες που λάμβαναν φαρμακευτική αγωγή. Σκοπός ήταν η ενίσχυση της αυτοσυμπόνιας, της ενσυνειδητότητας και της σύνδεσης με τους άλλους, και η διερεύνηση των μεταβολών στα θετικά και αρνητικά συναισθήματα, στην επίγνωση της προσοχής, στην ευγνωμοσύνη και στην ποιότητα ζωής.',
          'Δύο ομάδες των οκτώ ατόμων, οκτώ εβδομαδιαίες συναντήσεις των 50 λεπτών. Η αξιολόγηση έγινε με τέσσερα ψυχομετρικά εργαλεία σε τρεις στιγμές: πριν από την παρέμβαση, αμέσως μετά και έξι μήνες αργότερα.'],
-   ph=['p2023','conf'],logo=None)]
+   ph=['p2023','conf'],logo=None,kind='Αναρτημένη ανακοίνωση',au='Γιώργος Κουτσουραδής · Ειρήνη Καρακασίδου')]
 def conf_html(c,i):
     phs=''.join('<figure class="cf-ph">%s</figure>'%img(p,'(max-width: 900px) 44vw, 220px') for p in c['ph'])
     more=''.join('<p>%s</p>'%m for m in c['more'])
     logo=('<div class="cf-logo">%s</div>'%img(c['logo'],'(max-width: 900px) 80vw, 420px')) if c['logo'] else ''
-    return ('<article class="cf" style="--i:%d"><div class="cf-y"><span>%s</span></div><div class="cf-b">%s<p class="tag">%s</p><h2 class="cf-n">%s</h2><p class="cf-th">%s</p>'
-     '<p class="cf-pl">%s %s</p><p class="cf-au">Γιώργος Κουτσουραδής · Ειρήνη Καρακασίδου</p><h3 class="cf-t">«%s»</h3><p class="cf-s ink">%s</p>'
+    if c.get('kw'): more+='<p class="cf-kw"><b>Λέξεις-κλειδιά:</b> %s</p>'%c['kw']
+    th=('<p class="cf-th">%s</p>'%c['th']) if c['th'] else ''
+    return ('<article class="cf" style="--i:%d"><div class="cf-y"><span>%s</span></div><div class="cf-b">%s<p class="tag">%s</p><h2 class="cf-n">%s</h2>%s'
+     '<p class="cf-pl">%s %s</p><p class="cf-au">%s</p><h3 class="cf-t">«%s»</h3><p class="cf-s ink">%s</p>'
      '<details class="qa cf-more"><summary><span>Διαβάστε την πλήρη περίληψη</span><i>%s</i></summary><div class="ans">%s</div></details><div class="cf-phs">%s</div></div></article>')%(
-     i,c['y'],logo,'Αναρτημένη ανακοίνωση',c['n'],c['th'],icon('pin','bi'),c['pl'],c['t'],c['s'],icon('plus','bi'),more,phs)
-conf=('<section class="phero" id="top" data-amb="wash"><div class="wrap">%s%s<h1 class="h1 h1-s"><span class="w-name">Συνέδρια</span><span class="h1-role">Ανακοινώσεις του Γιώργου Κουτσουραδή σε πανελλήνια συνέδρια ψυχολογίας</span></h1>'
+     i,c['y'],logo,c['kind'],c['n'],th,icon('pin','bi'),c['pl'],c['au'],c['t'],c['s'],icon('plus','bi'),more,phs)
+conf=('<section class="phero" id="top" data-amb="wash"><div class="wrap">%s%s<h1 class="h1 h1-s"><span class="w-name">Συνέδρια</span><span class="h1-role">Εισηγήσεις και ανακοινώσεις του Γιώργου Κουτσουραδή σε πανελλήνια συνέδρια ψυχολογίας</span></h1>'
  '<p class="display h-words">Από την <em>πράξη</em> στην έρευνα, και πίσω.</p></div></section>'
  '<section class="cfs" data-amb="lines"><div class="wrap cf-l"><span class="cf-line" aria-hidden="true"></span>%s</div></section>'+cta_band())%(
  crumbs([('to-ergo-mou.html','Το έργο μου'),('synedria.html','Συνέδρια')]),kick('Το έργο μου'),''.join(conf_html(c,i) for i,c in enumerate(CONF)))
-page('synedria.html','Συνέδρια | Γιώργος Κουτσουραδής, Σύμβουλος Ψυχικής Υγείας','Οι ανακοινώσεις του Γιώργου Κουτσουραδή και της Ειρήνης Καρακασίδου στο 19ο Πανελλήνιο Συνέδριο Ψυχολογικής Έρευνας (2025) και στο 8ο Πανελλήνιο Συνέδριο Συμβουλευτικής Ψυχολογίας (2023).',
+page('synedria.html','Συνέδρια | Γιώργος Κουτσουραδής, Σύμβουλος Ψυχικής Υγείας','Οι εισηγήσεις του Γιώργου Κουτσουραδή σε πανελλήνια συνέδρια ψυχολογίας: τρίτη ηλικία (Θεσσαλονίκη 2026, Πάτρα 2025), Συμβουλευτική Ομοτίμων με την Ε.ΣΥ.ΟΜ (Πάτρα 2025), Ιωάννινα 2025 και Αθήνα 2023.',
  conf,crumbs_ld=[('to-ergo-mou.html','Το έργο μου'),('synedria.html','Συνέδρια')],og='conf')
 
 book=('<section class="phero bk-hero" id="top" data-amb="wash"><div class="wrap bk-in"><div class="bk-3d"><div class="bk-cv">%s<span class="bk-sp"></span></div><span class="bk-sh"></span></div>'
@@ -472,7 +509,7 @@ art=('<article class="art-pg"><header class="phero ar-hero" id="top" data-amb="w
  '<p class="ar-lede">Η γήρανση δεν είναι μόνο μια βιολογική διαδικασία. Είναι και μια υπαρξιακή εμπειρία που μας φέρνει αντιμέτωπους με την αλλαγή, την απώλεια, τα όρια, αλλά και με το ερώτημα του πώς στεκόμαστε απέναντι στον εαυτό μας όταν η ζωή δεν μπορεί πια να είναι ακριβώς όπως πριν. Η αυτοσυμπόνια μπορεί να αποτελέσει έναν διαφορετικό τρόπο συνάντησης με αυτή την πραγματικότητα: όχι ως παραίτηση, αλλά ως δυνατότητα να αναγνωρίζουμε την ευαλωτότητά μας χωρίς να στρεφόμαστε εναντίον μας.</p>'
  '%s<div class="refs"><h2>Βιβλιογραφία</h2><ol>%s</ol></div>'
  '<div class="ar-end">%s<div><p class="g-t">Γιώργος Κουτσουραδής</p><p>Σύμβουλος Ψυχικής Υγείας &amp; Συνθετικός Ψυχοθεραπευτής. Δουλεύει μεταξύ άλλων με ανθρώπους της τρίτης ηλικίας. <a href="symvouleftiki-triti-ilikia.html">Συμβουλευτική στην τρίτη ηλικία →</a></p></div></div></div></section></article>'+cta_band())%(
- crumbs([('to-ergo-mou.html','Το έργο μου'),('arthra.html','Κείμενα & Άρθρα'),(ART_SLUG,'Αυτοσυμπόνια στην τρίτη ηλικία')]),kick('Άρθρο · Τρίτη ηλικία'),mark('mk by-mk'),''.join(ab),''.join(ref(r) for r in refs),mark('mk by-mk'))
+ crumbs([('to-ergo-mou.html','Το έργο μου'),('arthra.html','Κείμενα & Άρθρα'),(ART_SLUG,'Αυτοσυμπόνια στην τρίτη ηλικία')]),kick('Άρθρο · Τρίτη ηλικία'),BYMK,''.join(ab),''.join(ref(r) for r in refs),BYMK)
 page(ART_SLUG,'Αυτοσυμπόνια στην τρίτη ηλικία | Άρθρο Γιώργου Κουτσουραδή','Η αυτοσυμπόνια στα χρόνια της ωρίμανσης: τι σημαίνει κατά την Kristin Neff, τι λέει η έρευνα για τους μεγαλύτερους ενήλικες και μια υπαρξιακή ματιά. Του Γιώργου Κουτσουραδή.',
  art,ld=[{"@type":"BlogPosting","headline":"Αυτοσυμπόνια στην τρίτη ηλικία","alternativeHeadline":"Μια πιο ήπια σχέση με τον εαυτό στα χρόνια της ωρίμανσης","author":{"@id":"#giorgos"},"inLanguage":"el","datePublished":"2026-11","dateModified":"2026-11-17","about":["Αυτοσυμπόνια","Τρίτη ηλικία","Γήρανση"]}],
  crumbs_ld=[('to-ergo-mou.html','Το έργο μου'),('arthra.html','Κείμενα & Άρθρα'),(ART_SLUG,'Αυτοσυμπόνια στην τρίτη ηλικία')])
@@ -508,12 +545,13 @@ pts=[(X1-x+2, y) for x,y in Gs]          # καθρέφτισμα: το πρόσ
 top=(pts[0][0],0); bot=(pts[-1][0],204); W=X1-X0+8
 poly='M%.1f 0L'%(W+6)+' L'.join('%.1f %.1f'%p for p in [top]+pts+[bot])+' L%.1f 204Z'%(W+6)
 EDGE='<svg class="edge" viewBox="0 0 %.1f 204" preserveAspectRatio="none" style="aspect-ratio:%.1f/204" aria-hidden="true"><path d="%s"/></svg>'%(W+6,W+6,poly)
-INTRO=('<div class="intro" aria-hidden="true"><div class="il il3">%s</div><div class="il il2">%s</div><div class="il il1">%s<div class="i-ct">%s'
- '<p class="i-nm">Γιώργος Κουτσουραδής<small>Σύμβουλος Ψυχικής Υγείας &amp; Ψυχοθεραπευτής</small></p></div></div></div>')%(EDGE,EDGE,EDGE,mark('mk i-mk'))
+INTRO=('<div class="intro" aria-hidden="true"><div class="il il3">%s</div><div class="il il2">%s</div><div class="il il1">%s<div class="i-ct">'
+ '<div class="i-lg"><img class="i-lgt" src="assets/img/giorgos-koutsouradis-logo.svg" width="502" height="370" alt=""></div></div></div></div>')%(EDGE,EDGE,EDGE)
 
 FONTS=[('Brygada 1918','normal',400,'brygada-1918'),('Brygada 1918','normal',500,'brygada-1918'),('Brygada 1918','italic',400,'brygada-1918'),('Commissioner','normal',400,'commissioner'),('Commissioner','normal',600,'commissioner')]
 UR={'greek':'U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF','latin':'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD'}
-FF=''.join("@font-face{font-family:'%s';font-style:%s;font-weight:%d;font-display:swap;src:url(assets/fonts/%s-%s-%d-%s.woff2) format('woff2');unicode-range:%s}"%(f,s,w,p,sub,w,s,UR[sub]) for f,s,w,p in FONTS for sub in ('greek','latin'))
+FF_UNUSED=''.join("@font-face{font-family:'%s';font-style:%s;font-weight:%d;font-display:swap;src:url(assets/fonts/%s-%s-%d-%s.woff2) format('woff2');unicode-range:%s}"%(f,s,w,p,sub,w,s,UR[sub]) for f,s,w,p in FONTS for sub in ('greek','latin'))
+FF=''
 css=open(S+'/style.css').read()
 mcss=re.sub(r'/\*[\s\S]*?\*/','',css); mcss=re.sub(r'\s*\n\s*','',mcss); mcss=re.sub(r'\s*([{};,>])\s*',r'\1',mcss).replace(';}','}')
 open('/tmp/k.js','w').write(open(S+'/script.js').read())
@@ -526,12 +564,12 @@ BASE=[
   "geo":{"@type":"GeoCoordinates","latitude":38.0049331,"longitude":23.6908265},"hasMap":"https://www.google.com/maps/place/?q=place_id:0x14a1a34a6edb11c1:0x7da1f7f7c9964a09",
   "areaServed":["Περιστέρι","Δυτική Αθήνα","Αθήνα","Online"],"founder":{"@id":"#giorgos"},
   "knowsAbout":[s['title'] for s in SERVICES]+["Συνθετική ψυχοθεραπεία","Υπαρξιακή ψυχοθεραπεία","Προσωποκεντρική προσέγγιση","Γνωσιακή συμπεριφορική προσέγγιση","Θετική ψυχολογία","Συμβουλευτική σταδιοδρομίας"]},
- {"@type":"Person","@id":"#giorgos","name":"Γιώργος Κουτσουραδής","alternateName":"Giorgos Koutsouradis","jobTitle":"Σύμβουλος Ψυχικής Υγείας & Συνθετικός Ψυχοθεραπευτής",
+ {"@type":"Person","@id":"#giorgos","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Georgios Koutsouradis"],"jobTitle":"Σύμβουλος Ψυχικής Υγείας & Συνθετικός Ψυχοθεραπευτής",
   "image":"assets/img/giorgos-koutsouradis-symvoulos-psychikis-ygeias-peristeri-portreto-960.webp","worksFor":{"@id":"#practice"},"telephone":"+30 698 588 0004","email":MAIL,
   "alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
   "hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Πενταετής εκπαίδευση στη Συμβουλευτική και τη Συνθετική Ψυχοθεραπεία","recognizedBy":{"@type":"Organization","name":"European Institute of Counselling & Psychotherapy"}}],
   "knowsAbout":["Συνθετική ψυχοθεραπεία","Συμβουλευτική","Θετική ψυχολογία","Evidence-Based Coaching","Συμβουλευτική σταδιοδρομίας","Αυτοσυμπόνια"]},
- {"@type":"WebSite","@id":"#website","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis",DOMAIN],"inLanguage":"el"}]
+ {"@type":"WebSite","@id":"#website","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Κουτσουραδής Γιώργος","Γιώργος Κουτσουράδης","gkoutsouradis",DOMAIN],"url":"https://"+DOMAIN+"/","inLanguage":"el"}]
 OGI={k:'assets/img/%s-%d.webp'%(IMGS[k][0],IMGS[k][1][min(1,len(IMGS[k][1])-1)]) for k in IMGS}
 def build(pg):
     fn=pg['fn']; graph=list(BASE)+pg['ld']
@@ -556,10 +594,7 @@ def build(pg):
 <meta property="og:image" content="{og}"><meta property="og:image:alt" content="Γιώργος Κουτσουραδής, Σύμβουλος Ψυχικής Υγείας &amp; Ψυχοθεραπευτής">
 <meta name="twitter:card" content="summary_large_image">
 {preload}
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/brygada-1918-greek-400-normal.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="assets/fonts/commissioner-greek-400-normal.woff2" crossorigin>
 <script>(function(h){{h.classList.add('js');try{{if(!sessionStorage.getItem('gk-intro')&&!document.hidden&&!matchMedia('(prefers-reduced-motion:reduce)').matches){{h.classList.add('intro-on');sessionStorage.setItem('gk-intro','1')}}}}catch(e){{}}}})(document.documentElement)</script>
-<style id="advon-fonts">{FF}</style>
 <style id="gk-css">{mcss}</style>
 <script type="application/ld+json">{json.dumps({"@context":"https://schema.org","@graph":graph},ensure_ascii=False,separators=(',',':'))}</script>
 </head>

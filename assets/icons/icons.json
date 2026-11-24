@@ -3,14 +3,14 @@
   "kind": "file",
   "ref": "assets/img/giorgos-koutsouradis-logo-icon.svg"
  },
- "source_md5": "68c8fa9610b2f22d7350e23230942970",
- "version": "be036b70",
+ "source_md5": "d8b5c8826d501b7411b7c8f7bd8261e7",
+ "version": "950066f8",
  "tile": "#F7F3EC",
  "crop": null,
  "header": [
-  "inline",
-  "index.html",
-  "9f07b6d5512dd67c3130bd921d41883b"
+  "file",
+  "assets/img/giorgos-koutsouradis-logo-header.svg",
+  "341e2012820e989e2a4b4ab3dab6a0ff"
  ],
- "made": "2026-11-17"
+ "made": "2026-11-24"
 }

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /_src/
 
-Sitemap: https://giorgoskoutsouradis.gr/sitemap.xml
+Sitemap: https://gkoutsouradis.gr/sitemap.xml

@@ -1,5 +1,5 @@
 import re,glob,os,json,urllib.parse
-R='/home/claude/k/repo'; D='https://giorgoskoutsouradis.gr'
+R='/home/claude/k/repo'; D='https://gkoutsouradis.gr'
 def url(fn): return D+'/' if fn=='index.html' else D+'/'+fn[:-5]
 pages=sorted(os.path.basename(f) for f in glob.glob(R+'/*.html'))
 for fn in pages:
@@ -21,7 +21,7 @@ for fn in pages:
     open(p,'w').write(s)
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for fn in ['index.html']+[x for x in pages if x!='index.html']:
-    sm+='  <url><loc>%s</loc><lastmod>2026-11-17</lastmod><priority>%s</priority></url>\n'%(url(fn),'1.0' if fn=='index.html' else ('0.3' if fn=='privacy.html' else '0.8'))
+    sm+='  <url><loc>%s</loc><lastmod>2026-11-24</lastmod><priority>%s</priority></url>\n'%(url(fn),'1.0' if fn=='index.html' else ('0.3' if fn=='privacy.html' else '0.8'))
 open(R+'/sitemap.xml','w').write(sm+'</urlset>\n')
 # παλιές διευθύνσεις WordPress → νέες (Netlify _redirects)
 OLD={'σχετικά-με-εμένα':'poios-eimai','υπηρεσίες':'ypiresies','άρθρα':'arthra','επικοινωνία':'epikoinonia','κλείστε-ραντεβού':'epikoinonia',
