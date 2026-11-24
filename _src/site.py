@@ -5,8 +5,9 @@ sys.path.insert(0, os.path.dirname(__file__))
 from services import SERVICES, COMMON_FAQ
 K='/home/claude/k'; R=K+'/repo'; S=K+'/src'
 MP=json.load(open(K+'/work/mark_paths.json'))
+LG=json.load(open(K+'/work/logo_paths.json')); LC=json.load(open(K+'/work/logo_center.json'))
 E=html.escape
-PHONE='698 588 0004'; TEL='+306985880004'; MAIL='gkoutsouradis.therapist@gmail.com'
+PHONE='+30 698 588 0004'; TEL='+306985880004'; MAIL='gkoutsouradis.therapist@gmail.com'
 ADDR='Μιαούλη 54, 121 31 Περιστέρι'; MAPQ='https://www.google.com/maps/search/?api=1&query=%CE%9C%CE%B9%CE%B1%CE%BF%CF%8D%CE%BB%CE%B7+54%2C+%CE%A0%CE%B5%CF%81%CE%B9%CF%83%CF%84%CE%AD%CF%81%CE%B9+121+31'
 MAPEMB='https://maps.google.com/maps?q=38.0049331,23.6908265&z=16&output=embed'
 DOMAIN='gkoutsouradis.gr'
@@ -42,18 +43,19 @@ def icon(n,cls='ic'):
     inner=re.sub(r'<(path|circle|rect)\b',r'<\1 pathLength="1"',ICON[n])
     return '<svg class="%s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">%s</svg>'%(cls,inner)
 
-SYM=('<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mk" viewBox="-6 -6 198 216">'
- '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-s,#C6C690);stroke-width:var(--mk-sw,10);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m2,0)"/>'
- '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-o,#9D4125);stroke-width:var(--mk-w,4);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m1,0)"/>'
- '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-g,#404A1E);stroke-width:var(--mk-w,4);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m3,0)"/>'
- '</symbol></defs></svg>')%(MP['sg'],MP['or'],MP['dg'])
+SYM=('<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mk" viewBox="250 10 260 236">'
+ '<path class="mk-sg" d="%s" fill-rule="evenodd" style="fill:var(--mk-s,#C6C690);fill-opacity:calc(1 - var(--m2,0))"/>'
+ '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-o,#9D4125);stroke-width:calc(var(--mk-w,4) * 1.22);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m1,0)"/>'
+ '<path d="%s" fill="none" pathLength="1" style="stroke:var(--mk-g,#404A1E);stroke-width:calc(var(--mk-w,4) * .95);stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:var(--m3,0)"/>'
+ '</symbol></defs></svg>')%(LG['sage'],LC['red'],LC['dg'])
 BYMK='<img class="by-mk" src="assets/img/giorgos-koutsouradis-logo-icon.svg" width="260" height="236" alt="" loading="lazy">'
-def mark(cls='mk'): return '<svg class="%s" viewBox="-6 -6 198 216" aria-hidden="true"><use href="#mk"/></svg>'%cls
+def mark(cls='mk'): return '<svg class="%s" viewBox="0 0 260 236" aria-hidden="true"><use href="#mk"/></svg>'%cls
 
 IMGS={
  'portrait':('giorgos-koutsouradis-symvoulos-psychikis-ygeias-peristeri-portreto',[640,960,1400],1600,1600,'Ο Γιώργος Κουτσουραδής, σύμβουλος ψυχικής υγείας και ψυχοθεραπευτής, στο Περιστέρι'),
  'armchair':('giorgos-koutsouradis-psychotherapeftis-grafeio-polythrona',[720,1080,1448],1448,1086,'Ο ψυχοθεραπευτής Γιώργος Κουτσουραδής στην πολυθρόνα του γραφείου του, δίπλα στα πτυχία του'),
  'office':('giorgos-koutsouradis-synthetikos-psychotherapeftis-peristeri-grafeio',[720,1080,1448],1448,1086,'Ο Γιώργος Κουτσουραδής στο γραφείο συμβουλευτικής στο Περιστέρι'),
+ 'shelf':('giorgos-koutsouradis-grafeio-vivliothiki-peristeri',[483],483,640,'Η βιβλιοθήκη και η πολυθρόνα στο γραφείο του Γιώργου Κουτσουραδή στο Περιστέρι'),
  'room':('giorgos-koutsouradis-grafeio-symvouleftikis-peristeri',[960,1440,2048],2048,1152,'Το γραφείο συμβουλευτικής και ψυχοθεραπείας του Γιώργου Κουτσουραδή στο Περιστέρι'),
  'conf':('giorgos-koutsouradis-karakasidou-synedrio-poster',[600,1000],1200,1600,'Ο Γιώργος Κουτσουραδής και η Ειρήνη Καρακασίδου μπροστά στην αναρτημένη ανακοίνωσή τους σε πανελλήνιο συνέδριο'),
  'book':('chartografontas-ti-stadiodromia-karakasidou-koutsouradis-vivlio',[400,670],670,948,'Το εξώφυλλο του βιβλίου «Χαρτογραφώντας τη σταδιοδρομία» των Ειρήνης Καρακασίδου και Γιώργου Κουτσουραδή, Εκδόσεις Παρισιάνου'),
@@ -241,7 +243,7 @@ CRED=[('cap','Συμβουλευτική & Συνθετική Ψυχοθεραπ
 creds=''.join('<div class="cr-c tilt" style="--i:%d">%s<h3>%s</h3><p>%s</p></div>'%(i,icon(a,'ic'),t,d) for i,(a,t,d) in enumerate(CRED))
 MEMB=[('people','Ελληνική Συμβουλευτική Εταιρεία (ΕΛ.Ε.ΣΥ.)','Τακτικό μέλος'),
       ('rings','Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)','Τακτικό μέλος'),
-      ('sprout','Ελληνική Εταιρεία Θετικής Ψυχολογίας','Τακτικό μέλος'),
+      ('sprout','Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)','Τακτικό μέλος'),
       ('compass','European Mentoring &amp; Coaching Council (EMCC Global)','Μέλος')]
 memb=''.join('<li class="mb" style="--i:%d">%s<span class="mb-k">%s</span><b>%s</b></li>'%(i,icon(a,'ic'),k,t) for i,(a,t,k) in enumerate(MEMB))
 ETH=['Εμπιστευτικότητα','Εχεμύθεια','Σεβασμός της αξιοπρέπειας','Αυτονομία κάθε ανθρώπου','Υψηλά πρότυπα πρακτικής']
@@ -359,8 +361,8 @@ for s in SERVICES: svc_page(s)
 OUT6=[('Αυτογνωσία','Μια βαθύτερη κατανόηση του εαυτού σας.'),('Αυτοεκτίμηση','Περισσότερη εμπιστοσύνη στις δυνατότητές σας.'),('Υγιέστερες σχέσεις','Πιο ουσιαστικές σχέσεις με τους άλλους.'),
       ('Συναισθηματική αυθεντικότητα','Επαφή με ό,τι πραγματικά νιώθετε.'),('Διαχείριση δυσκολιών','Πιο αποτελεσματικοί τρόποι αντιμετώπισης.'),('Προσωπική ανάπτυξη','Πορεία προς μεγαλύτερη ισορροπία και πληρότητα.')]
 DIAG={
- 'synthetiki-prosengisi':'<svg class="dg dg-syn" viewBox="0 0 400 380"><circle class="d1" cx="200" cy="150" r="92"/><circle class="d2" cx="146" cy="240" r="92"/><circle class="d3" cx="254" cy="240" r="92"/><circle class="dc" cx="200" cy="210" r="24"/><text x="200" y="66">Υπαρξιακή</text><text x="70" y="352">Προσωποκεντρική</text><text x="330" y="352">Γνωσιακή Συμπεριφορική</text></svg>',
- 'yparxiaki-prosengisi':'<svg class="dg dg-ex" viewBox="0 0 400 380"><circle class="dl" cx="200" cy="190" r="140" pathLength="1"/><circle class="dc" cx="200" cy="190" r="30"/><text class="tc" x="200" y="195">Ύπαρξη</text>'+''.join('<g class="dn" style="--i:%d"><circle cx="%d" cy="%d" r="7"/><text x="%d" y="%d">%s</text></g>'%(i,x,y,tx,ty,t) for i,(x,y,tx,ty,t) in enumerate([(200,50,200,30,'Νόημα'),(340,190,340,220,'Ελευθερία &amp; ευθύνη'),(200,330,200,362,'Περατότητα'),(60,190,60,220,'Σχέση &amp; μοναξιά')]))+'</svg>',
+ 'synthetiki-prosengisi':'<svg class="dg dg-syn" viewBox="0 0 400 400"><circle class="d1" cx="200" cy="158" r="92"/><circle class="d2" cx="146" cy="248" r="92"/><circle class="d3" cx="254" cy="248" r="92"/><circle class="dc" cx="200" cy="218" r="24"/><text class="dt" x="200" y="40">Υπαρξιακή</text><text class="dt" x="116" y="372">Προσωποκεντρική</text><text class="dt" x="290" y="364">Γνωσιακή</text><text class="dt" x="290" y="384">Συμπεριφορική</text></svg>',
+ 'yparxiaki-prosengisi':'<svg class="dg dg-ex" viewBox="0 0 400 380"><circle class="dl" cx="200" cy="190" r="140" pathLength="1"/><circle class="dc" cx="200" cy="190" r="40"/><text class="tc" x="200" y="195">Ύπαρξη</text>'+''.join('<g class="dn" style="--i:%d"><circle cx="%d" cy="%d" r="7"/><text x="%d" y="%d">%s</text></g>'%(i,x,y,tx,ty,''.join('<tspan x="%d" dy="%s">%s</tspan>'%(tx,'0' if k==0 else '1.15em',w) for k,w in enumerate(t.split('|')))) for i,(x,y,tx,ty,t) in enumerate([(200,50,200,30,'Νόημα'),(340,190,340,220,'Ελευθερία &amp;|ευθύνη'),(200,330,200,362,'Περατότητα'),(60,190,60,220,'Σχέση &amp;|μοναξιά')]))+'</svg>',
  'prosopokentriki-prosengisi':'<svg class="dg dg-pc" viewBox="0 0 400 380"><path class="dl" pathLength="1" d="M200 50 345 300H55z"/><circle class="dc" cx="200" cy="215" r="34"/><text class="tc" x="200" y="220">Ο άνθρωπος</text>'+''.join('<g class="dn" style="--i:%d"><circle cx="%d" cy="%d" r="8"/><text x="%d" y="%d">%s</text></g>'%(i,x,y,tx,ty,t) for i,(x,y,tx,ty,t) in enumerate([(200,50,200,30,'Ενσυναίσθηση'),(345,300,330,334,'Γνησιότητα'),(55,300,80,334,'Άνευ όρων αποδοχή')]))+'</svg>',
  'gnosiaki-symperiforiki-prosengisi':'<svg class="dg dg-cbt" viewBox="0 0 400 380"><circle class="dl" cx="200" cy="200" r="120" pathLength="1"/><g class="orb"><circle class="od" cx="200" cy="80" r="7"/></g>'+''.join('<g class="dn" style="--i:%d"><circle class="nb" cx="%d" cy="%d" r="44"/><text x="%d" y="%d">%s</text></g>'%(i,x,y,x,y+5,t) for i,(x,y,t) in enumerate([(200,80,'Σκέψεις'),(304,260,'Συναισθήματα'),(96,260,'Συμπεριφορές')]))+'</svg>',
 }
@@ -430,9 +432,9 @@ CONF=[dict(y='2026',n='8ο Πανελλήνιο Συνέδριο Αναπτυξ�
    pl='Πάτρα · Νοέμβριος 2025',au='Γιώργος Κουτσουραδής · Γιώργος Σύρακας · Αγγελική Σωτηρίου, Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)',
    t='Ατομική Συμβουλευτική Ομοτίμων',
    s='Η Συμβουλευτική Ομοτίμων αποτελεί μια μορφή ενδυνάμωσης και ψυχοκοινωνικής υποστήριξης, που παρέχεται από εκπαιδευμένους εθελοντές, συχνά μη επαγγελματίες, με δεξιότητες ενεργητικής ακρόασης, συμβουλευτικής και αποτελεσματικής επικοινωνίας. Βασίζεται στην ανθρώπινη ανάγκη για σύνδεση με άτομα που βρίσκονται σε παρόμοια φάση ζωής ή έχουν κοινές εμπειρίες, ανησυχίες και προκλήσεις.',
-   more=['Αν και η ομαδική συμβουλευτική αποτελεί βασικό άξονα της δράσης της Ελληνικής Επιστημονικής Εταιρείας Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ), τελευταία αναπτύσσεται δυναμικά και η ατομική συμβουλευτική ομηλίκων/ομοτίμων σε ενήλικα άτομα. Στην Ελλάδα, η ατομική συμβουλευτική ομοτίμων είχε ξεκινήσει να εφαρμόζεται από το 1995 στο Συμβουλευτικό Κέντρο Ομηλίκων του ΕΚΠΑ, όπου εκπαιδευμένοι φοιτητές προσέφεραν ατομική ή ομαδική συμβουλευτική σε συμφοιτητές τους. Η ανάγκη κάποιων συμβουλευόμενων για ατομική, πιο εστιασμένη υποστήριξη σε συνδυασμό με τη διάθεση των μελών της Ε.ΣΥ.ΟΜ να προσφέρουν υποστήριξη μέσα από τις προσωπικές τους εμπειρίες, οδήγησε στη θεσμοθέτηση της ατομικής πρακτικής.',
+   more=['Αν και η ομαδική συμβουλευτική αποτελεί βασικό άξονα της δράσης της Ελληνικής Επιστημονικής Εταιρείας Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ), τελευταία αναπτύσσεται δυναμικά και η ατομική Συμβουλευτική Ομηλίκων/Ομοτίμων σε ενήλικα άτομα. Στην Ελλάδα, η ατομική Συμβουλευτική Ομοτίμων είχε ξεκινήσει να εφαρμόζεται από το 1995 στο Συμβουλευτικό Κέντρο Ομηλίκων του ΕΚΠΑ, όπου εκπαιδευμένοι φοιτητές προσέφεραν ατομική ή ομαδική συμβουλευτική σε συμφοιτητές τους. Η ανάγκη κάποιων συμβουλευόμενων για ατομική, πιο εστιασμένη υποστήριξη σε συνδυασμό με τη διάθεση των μελών της Ε.ΣΥ.ΟΜ να προσφέρουν υποστήριξη μέσα από τις προσωπικές τους εμπειρίες, οδήγησε στη θεσμοθέτηση της ατομικής πρακτικής.',
          'Στην παρουσίαση αναπτύσσονται ο τρόπος με τον οποίο εφαρμόζεται η δράση σε συγκεκριμένες θεματικές περιοχές (π.χ. χωρισμένοι γονείς, νέοι σε επαγγελματική μετάβαση, γονείς ενήλικων παιδιών κ.ά.), η διαδικασία συντονισμού της δράσης, από την υποβολή αιτημάτων μέσω της ιστοσελίδας της Ε.ΣΥ.ΟΜ έως τη σύζευξη συμβουλευόμενου και συμβούλου, το εγχειρίδιο Ατομικής Συμβουλευτικής Ομοτίμων, το οποίο δημιουργήθηκε βάσει διεθνούς βιβλιογραφίας, και τέλος η ομαδική εποπτεία και ο ρόλος της για τη διασφάλιση της ποιότητας της υποστήριξης, της διαρκούς ανατροφοδότησης και βελτίωσης της πρακτικής. Η παρουσίαση στοχεύει να αναδείξει την αξία της ατομικής συμβουλευτικής μεταξύ ομοτίμων ως εργαλείο πρόληψης, ενδυνάμωσης και ανάπτυξης, σε ένα πλήρως δομημένο και εποπτευόμενο πλαίσιο.',
-         '<b>Το συμπόσιο.</b> Η συμβουλευτική ομηλίκων/ομοτίμων (Σ.Ο) είναι ένα σύστημα προσφοράς και αποδοχής βοήθειας μεταξύ ατόμων σε παρόμοια φάση ζωής και με παρόμοια προβλήματα. Στηρίζεται στις βασικές αρχές του αμοιβαίου σεβασμού, της υπευθυνότητας και της κατανόησης. Η Ε.ΣΥ.ΟΜ, στα 10 και πλέον χρόνια της λειτουργίας της, υποστηρίζει τη δημιουργία και λειτουργία προγραμμάτων Συμβουλευτικής Ομοτίμων, ομαδικών και ατομικών. Στο συμπόσιο παρουσιάστηκαν το πρόγραμμα «We Support our MS» (WSOMS) για ασθενείς με Πολλαπλή Σκλήρυνση, η μεθοδολογία της Ε.ΣΥ.ΟΜ για την ενδυνάμωση υπαρχόντων προγραμμάτων Σ.Ο σε διάφορους φορείς, μια ομάδα ομοτίμων για ψυχοθεραπευτές και, τέλος, η ατομική Συμβουλευτική Ομοτίμων.'],
+         '<b>Το συμπόσιο.</b> Η Συμβουλευτική Ομηλίκων/Ομοτίμων (Σ.Ο) είναι ένα σύστημα προσφοράς και αποδοχής βοήθειας μεταξύ ατόμων σε παρόμοια φάση ζωής και με παρόμοια προβλήματα. Στηρίζεται στις βασικές αρχές του αμοιβαίου σεβασμού, της υπευθυνότητας και της κατανόησης. Η Ε.ΣΥ.ΟΜ, στα 10 και πλέον χρόνια της λειτουργίας της, υποστηρίζει τη δημιουργία και λειτουργία προγραμμάτων Συμβουλευτικής Ομοτίμων, ομαδικών και ατομικών. Στο συμπόσιο παρουσιάστηκαν το πρόγραμμα «We Support our MS» (WSOMS) για ασθενείς με Πολλαπλή Σκλήρυνση, η μεθοδολογία της Ε.ΣΥ.ΟΜ για την ενδυνάμωση υπαρχόντων προγραμμάτων Σ.Ο σε διάφορους φορείς, μια ομάδα ομοτίμων για ψυχοθεραπευτές και, τέλος, η ατομική Συμβουλευτική Ομοτίμων.'],
    kw='Ατομική Συμβουλευτική Ομοτίμων, Ε.ΣΥ.ΟΜ, εγχειρίδιο δράσης, θεματικές υποστήριξης, εποπτεία',
    ph=['es_dia','es_om','es_pan'],logo=None),
   dict(y='2025',n='19ο Πανελλήνιο Συνέδριο Ψυχολογικής Έρευνας',th='«Μοιραζόμαστε τις ομοιότητές μας, γιορτάζουμε τις διαφορές μας»',
@@ -539,14 +541,14 @@ contact=('<section class="phero ct-hero" id="top" data-amb="wash"><div class="wr
  '<a class="ctc tilt" href="mailto:%s" style="--i:1">%s<span class="ctc-l">Email</span><b class="em">%s</b><span class="ctc-h">Γράψτε μου όποτε σας βολεύει</span></a>'
  '<a class="ctc tilt" href="%s" target="_blank" rel="noopener" style="--i:2">%s<span class="ctc-l">Γραφείο</span><b>Μιαούλη 54</b><span class="ctc-h">121 31 Περιστέρι Αττικής · Οδηγίες ↗</span></a></div></section>'
  '<section class="steps" data-amb="dots"><div class="wrap st-in"><div>%s%s<p class="rv">Η διαδικασία είναι απλή και σέβεται τον χρόνο σας. Συνεδρίες δια ζώσης στο γραφείο ή online, μέσω ασφαλούς πλατφόρμας τηλεδιάσκεψης.</p></div><ol class="st-l"><span class="st-line" aria-hidden="true"></span>%s</ol></div></section>'
- '<section class="office" data-amb="profiles"><div class="wrap of-in"><figure class="of-ph"><div class="ms"><div class="ms-in">%s</div></div></figure>'
+ '<section class="office" data-amb="profiles"><div class="wrap of-in"><figure class="of-ph of-two"><div class="ms of-a"><div class="ms-in">%s</div></div><div class="of-b rv">%s</div></figure>'
  '<div class="of-map">%s%s<p class="rv">Το γραφείο βρίσκεται στην οδό Μιαούλη 54, στο Περιστέρι. Αν σας βολεύει περισσότερο, μπορούμε να συναντηθούμε online.</p>'
  '<div class="mapbox"><iframe class="map" src="about:blank" data-advon-src="%s" data-advon-kind="map" data-advon-provider="Google" data-advon-link="%s" title="Χάρτης: Μιαούλη 54, Περιστέρι" loading="lazy"></iframe></div></div></div></section>'
  '<section class="faq" data-amb="dots2"><div class="wrap faq-in"><div class="faq-h">%s%s</div><div class="faq-l">%s</div></div></section>')%(
  crumbs([('epikoinonia.html','Επικοινωνία')]),kick('Ραντεβού'),TEL,icon('phone','ic'),PHONE,MAIL,icon('mail','ic'),MAIL,MAPQ,icon('pin','ic'),
- kick('Πώς κλείνουμε ραντεβού'),h2('Τρία απλά βήματα','mask'),steps,img('room','(max-width: 900px) 92vw, 50vw'),kick('Ο χώρος'),h2('Ένα ήσυχο γραφείο στο Περιστέρι','roll'),MAPEMB,MAPQ,
+ kick('Πώς κλείνουμε ραντεβού'),h2('Τρία απλά βήματα','mask'),steps,img('room','(max-width: 900px) 92vw, 36vw'),img('shelf','(max-width: 900px) 92vw, 16vw'),kick('Ο χώρος'),h2('Ένα ήσυχο γραφείο στο Περιστέρι','roll'),MAPEMB,MAPQ,
  kick('Πριν έρθετε'),h2('Χρήσιμα να ξέρετε','light'),faq(['book','online','length','cancel','confidential','nervous'],True))
-page('epikoinonia.html','Επικοινωνία & Ραντεβού | Γιώργος Κουτσουραδής, Περιστέρι','Κλείστε ραντεβού με τον Γιώργο Κουτσουραδή, Σύμβουλο Ψυχικής Υγείας: 698 588 0004, '+MAIL+'. Γραφείο: Μιαούλη 54, Περιστέρι. Συνεδρίες και online.',
+page('epikoinonia.html','Επικοινωνία & Ραντεβού | Γιώργος Κουτσουραδής, Περιστέρι','Κλείστε ραντεβού με τον Γιώργο Κουτσουραδή, Σύμβουλο Ψυχικής Υγείας: +30 698 588 0004, '+MAIL+'. Γραφείο: Μιαούλη 54, Περιστέρι. Συνεδρίες και online.',
  contact,ld=[faq_ld(['book','online','length','cancel','confidential','nervous'])],crumbs_ld=[('epikoinonia.html','Επικοινωνία')],og='room')
 
 # ---------- κοινό head / build ----------
@@ -581,7 +583,7 @@ BASE=[
   "knowsAbout":[s['title'] for s in SERVICES]+["Συνθετική ψυχοθεραπεία","Υπαρξιακή ψυχοθεραπεία","Προσωποκεντρική προσέγγιση","Γνωσιακή συμπεριφορική προσέγγιση","Θετική ψυχολογία","Συμβουλευτική σταδιοδρομίας"]},
  {"@type":"Person","@id":"#giorgos","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Georgios Koutsouradis"],"jobTitle":"Σύμβουλος Ψυχικής Υγείας & Συνθετικός Ψυχοθεραπευτής",
   "image":"assets/img/giorgos-koutsouradis-symvoulos-psychikis-ygeias-peristeri-portreto-960.webp","worksFor":{"@id":"#practice"},"telephone":"+30 698 588 0004","email":MAIL,
-  "memberOf":[{"@type":"Organization","name":"Ελληνική Συμβουλευτική Εταιρεία (ΕΛ.Ε.ΣΥ.)"},{"@type":"Organization","name":"Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Θετικής Ψυχολογίας"},{"@type":"Organization","name":"European Mentoring & Coaching Council (EMCC Global)"}],"alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
+  "memberOf":[{"@type":"Organization","name":"Ελληνική Συμβουλευτική Εταιρεία (ΕΛ.Ε.ΣΥ.)"},{"@type":"Organization","name":"Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)"},{"@type":"Organization","name":"European Mentoring & Coaching Council (EMCC Global)"}],"alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
   "hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Πενταετής εκπαίδευση στη Συμβουλευτική και τη Συνθετική Ψυχοθεραπεία","recognizedBy":{"@type":"Organization","name":"European Institute of Counselling & Psychotherapy"}}],
   "knowsAbout":["Συνθετική ψυχοθεραπεία","Συμβουλευτική","Θετική ψυχολογία","Evidence-Based Coaching","Συμβουλευτική σταδιοδρομίας","Αυτοσυμπόνια"]},
  {"@type":"WebSite","@id":"#website","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Κουτσουραδής Γιώργος","Γιώργος Κουτσουράδης","gkoutsouradis",DOMAIN],"url":"https://"+DOMAIN+"/","inLanguage":"el"}]

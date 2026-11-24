@@ -1,5 +1,6 @@
+@font-face{font-family:'GK Digits';src:url(assets/fonts/noto-serif-bold-digits.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0030-0039}@font-face{font-family:'GK Digits';src:url(assets/fonts/noto-serif-bold-digits.woff2) format('woff2');font-weight:100 900;font-style:italic;font-display:swap;unicode-range:U+0030-0039}
 :root{--paper:#F7F3EC;--paper2:#EFE8DC;--card:#FFFDF9;--ink:#1D2420;--ink2:#424A43;--mute:#666D64;--rust:#B4502A;--rust-t:#9A3F1E;--sage:#C9D6B4;--sage2:#E6ECDB;--green:#4D6142;--forest:#1E2A22;--forest2:#26352B;--cream:#F3E6D3;--line:rgba(29,36,32,.13);
---fd:Georgia,'Noto Serif','Droid Serif',serif;--fb:Georgia,'Noto Serif','Droid Serif',serif;
+--fd:'GK Digits',Georgia,'Noto Serif','Droid Serif',serif;--fb:'GK Digits',Georgia,'Noto Serif','Droid Serif',serif;
 --sh1:0 1px 2px rgba(30,42,34,.06),0 6px 18px -8px rgba(30,42,34,.18);--sh2:0 2px 6px rgba(30,42,34,.08),0 22px 48px -20px rgba(30,42,34,.32);--sh3:0 30px 80px -30px rgba(120,52,22,.38),0 10px 30px -14px rgba(30,42,34,.3);
 --ease:cubic-bezier(.22,.61,.36,1);--out:cubic-bezier(.16,1,.3,1);color-scheme:light only}
 *,*::before,*::after{box-sizing:border-box}
@@ -705,3 +706,28 @@ html.js .mb-g.in .mb,html.js .mb-g.rv-on .mb{opacity:1;transform:none}
 @media (max-width:900px){section{padding:48px 0}.phero{padding-bottom:28px}}
 @media (max-width:560px){.mb-g{grid-template-columns:minmax(0,1fr)}.mb{padding:20px}}
 @media (prefers-reduced-motion:reduce){html.js .mb{opacity:1;transform:none}}
+
+/* ===== round 3 (24 Nov 2026, his e-mail): digits, gaps, card, diagram, logo mark ===== */
+section{padding:clamp(44px,5vw,80px) 0}
+.syn-pin{padding:clamp(48px,5vw,80px) 0}
+.phero{padding-bottom:clamp(28px,3vw,48px)}
+.cf-l{gap:clamp(30px,4vw,56px)}
+.mb-h .kick{margin-bottom:20px}
+.lgcard{background:var(--cream);box-shadow:0 14px 34px -26px rgba(0,0,0,.45)}
+.dg-syn .dt{paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}
+html.js:not(.ready) .dg-syn .d1{transform:translate(0,26px)}html.js:not(.ready) .dg-syn .d2{transform:translate(24px,-14px)}html.js:not(.ready) .dg-syn .d3{transform:translate(-24px,-14px)}
+@media (max-width:900px){section{padding:36px 0}.syn-pin{padding:44px 0}.phero{padding-bottom:20px}.cf-l{gap:28px}}
+@media (max-width:900px){.hbg-mk{width:88vw;right:-24vw;top:60%;opacity:.24}}
+.dg text:not(.tc){paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}
+.of-two{display:flex;gap:14px;align-items:flex-start}
+.of-two .of-a{flex:1.7778 1 0;min-width:0}
+.of-two .of-b{flex:.7547 1 0;min-width:0;border-radius:30px;overflow:hidden;box-shadow:var(--sh2)}
+.of-two .of-b img{display:block;width:100%;height:auto}
+@media (max-width:900px){.of-two{flex-direction:column}.of-two .of-a,.of-two .of-b{flex:none;width:100%}.of-two .of-b{max-width:420px}}
+@media (min-width:901px){
+.office .of-in{grid-template-columns:minmax(0,1fr);gap:clamp(28px,3.5vw,48px)}
+.office .of-ph.of-two{order:2;gap:18px}
+.office .of-map{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:clamp(30px,5vw,70px);align-items:start}
+.office .of-map>*:not(.mapbox){grid-column:1}
+.office .of-map>.mapbox{grid-column:2;grid-row:1/span 4;margin:0}
+}
