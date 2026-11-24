@@ -38,7 +38,7 @@ if(intro&&!RM&&!d.hidden){
 setTimeout(ready,3600);
 
 /* ---------- reveal ---------- */
-var RSEL='.rv,.ink,.lc,.kick,.proof-in,.sc-grid,.oc-grid,.wk-grid,.faq-l,.cr-grid,.by-grid,.sv-list,.ha-g,.tp-grid,.sp-g,.pil-g,.gn,.wk3-g,.cf,.ct-g,.st-l,.kw,.ms,.mapbox,.pol,.draw-mk,.cta,.draw';
+var RSEL='.rv,.ink,.lc,.kick,.proof-in,.sc-grid,.oc-grid,.wk-grid,.faq-l,.cr-grid,.by-grid,.sv-list,.ha-g,.tp-grid,.sp-g,.pil-g,.gn,.wk3-g,.cf,.ct-g,.st-l,.kw,.ms,.mapbox,.pol,.draw-mk,.cta,.draw,.mb-g';
 var els=$$(RSEL);
 function count(el){var to=+el.getAttribute('data-count'),sep=el.getAttribute('data-sep'),fmt=function(v){v=Math.round(v);return sep?String(v).replace(/\B(?=(\d{3})+(?!\d))/g,sep):String(v)};
   if(RM||d.hidden){el.textContent=fmt(to);return}var from=to>1900?to-40:0,t0=null,dur=to>1900?1400:1600;
