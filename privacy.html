@@ -36,7 +36,12 @@ section+section{margin-top:72px;padding-top:48px;border-top:1px solid var(--line
 footer{margin-top:64px;color:var(--mute);font-size:13px}
 .adv{font-weight:800;letter-spacing:.01em;color:#1C6FD8;background:linear-gradient(100deg,#1C6FD8 0%,#1C6FD8 32%,#2AA8EE 42%,#47C8F5 47%,#8BE0FC 50%,#47C8F5 53%,#2AA8EE 58%,#1C6FD8 68%,#1C6FD8 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 6px rgba(71,200,245,.38));animation:advShine 3.8s ease-in-out infinite}@keyframes advShine{0%{background-position:100% 0}62%,100%{background-position:0 0}}@media (prefers-reduced-motion:reduce){.adv{animation:none;background-position:50% 0}}
 </style>
-</head>
+<style id="r4-css">main:has(>.cta:last-child)+.ft{margin-top:0;border-radius:0}
+@supports not selector(:has(*)){.cta{padding-bottom:calc(clamp(56px,7vw,96px) + 48px)!important}}
+@media (max-width:900px){.cta{padding-bottom:48px}}
+.cta-b .tl{padding-bottom:6px;background-size:100% 1.5px}
+@media (min-width:901px){.mb-g>.mb:last-child:nth-child(odd){grid-column:1/-1}}
+.cf-logo.cf-logo-b{max-width:340px}</style></head>
 <body>
 <div class="w">
 <nav><a href="index.html">← <span>Γιώργος Κουτσουραδής</span></a><span class="lang"><a href="#el" lang="el">EL</a><a href="#en" lang="en">EN</a></span></nav>

@@ -241,9 +241,10 @@ CRED=[('cap','Συμβουλευτική & Συνθετική Ψυχοθεραπ
       ('sprout','Θετική Ψυχολογία','Εκπαίδευση που εμπλουτίζει τη θεραπευτική μου ματιά.'),
       ('steps','Evidence-Based Coaching','Τεκμηριωμένες μέθοδοι για στόχους και εξέλιξη.')]
 creds=''.join('<div class="cr-c tilt" style="--i:%d">%s<h3>%s</h3><p>%s</p></div>'%(i,icon(a,'ic'),t,d) for i,(a,t,d) in enumerate(CRED))
-MEMB=[('people','Ελληνική Συμβουλευτική Εταιρεία (ΕΛ.Ε.ΣΥ.)','Τακτικό μέλος'),
+MEMB=[('people','Ελληνική Συμβουλευτική Εταιρεία (Ε.Ε.Σ.)','Τακτικό μέλος'),
       ('rings','Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)','Τακτικό μέλος'),
-      ('sprout','Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)','Τακτικό μέλος'),
+      ('layers','Ελληνική Εταιρεία Συνθετικών Ψυχοθεραπευτών (Ε.Ε.ΣΥ.Ψ.)','Τακτικό μέλος'),
+       ('sprout','Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)','Μέλος'),
       ('compass','European Mentoring &amp; Coaching Council (EMCC Global)','Μέλος')]
 memb=''.join('<li class="mb" style="--i:%d">%s<span class="mb-k">%s</span><b>%s</b></li>'%(i,icon(a,'ic'),k,t) for i,(a,t,k) in enumerate(MEMB))
 ETH=['Εμπιστευτικότητα','Εχεμύθεια','Σεβασμός της αξιοπρέπειας','Αυτονομία κάθε ανθρώπου','Υψηλά πρότυπα πρακτικής']
@@ -265,7 +266,7 @@ about=('<section class="phero ab-hero" id="top" data-amb="wash"><div class="wrap
  '<p class="display h-words">Η θεραπευτική σχέση ξεκινά από τη <em>συνάντηση</em> δύο ανθρώπων.</p></div>'
  '<figure class="ph-ph"><div class="rv-cur">%s</div></figure></div></section>'
  '<section class="ab-intro" data-amb="lines"><div class="wrap narrow">'
- '<p class="lead-l ink">Εργάζομαι ως Σύμβουλος Ψυχικής Υγείας και Συνθετικός Ψυχοθεραπευτής. Ο βασικός μου στόχος είναι να δημιουργώ έναν ασφαλή και ουσιαστικό χώρο, όπου κάθε άνθρωπος μπορεί να εκφραστεί, να διερευνήσει τις δυσκολίες του και να ανακαλύψει νέους τρόπους να σχετίζεται με τον εαυτό του και με τους άλλους.</p>'
+ '<p class="lead-l ink">Στη συμβουλευτική και την ψυχοθεραπεία, εργάζομαι ακολουθώντας τη συνθετική προσέγγιση. Ο βασικός μου στόχος είναι να δημιουργώ έναν ασφαλή και ουσιαστικό χώρο, όπου κάθε άνθρωπος μπορεί να εκφραστεί, να διερευνήσει τις δυσκολίες του και να ανακαλύψει νέους τρόπους να σχετίζεται με τον εαυτό του και με τους άλλους.</p>'
  '<p class="ink">Για μένα, η ψυχοθεραπεία δεν είναι μια διαδικασία έτοιμων απαντήσεων ούτε μια προσπάθεια να αλλάξει κάποιος για να ανταποκριθεί σε εξωτερικές προσδοκίες. Είναι πρωτίστως μια ανθρώπινη συνάντηση, όπου η εμπιστοσύνη, η αυθεντικότητα και ο σεβασμός δημιουργούν τις προϋποθέσεις για βαθύτερη κατανόηση και προσωπική αλλαγή.</p>'
  '<p class="ink">Κάθε άνθρωπος φέρνει τη δική του ιστορία, τις εμπειρίες, τις δυνατότητες και τις αντιφάσεις του. Ο ρόλος μου είναι να τον συνοδεύω σε αυτή την προσωπική διαδρομή, χωρίς προκαθορισμένες απαντήσεις, με σεβασμό στον τρόπο και στον χρόνο που χρειάζεται.</p></div></section>'
  '<section class="journey" data-amb="dots"><div class="wrap jr-in"><div class="jr-txt">%s%s'
@@ -583,7 +584,7 @@ BASE=[
   "knowsAbout":[s['title'] for s in SERVICES]+["Συνθετική ψυχοθεραπεία","Υπαρξιακή ψυχοθεραπεία","Προσωποκεντρική προσέγγιση","Γνωσιακή συμπεριφορική προσέγγιση","Θετική ψυχολογία","Συμβουλευτική σταδιοδρομίας"]},
  {"@type":"Person","@id":"#giorgos","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Georgios Koutsouradis"],"jobTitle":"Σύμβουλος Ψυχικής Υγείας & Συνθετικός Ψυχοθεραπευτής",
   "image":"assets/img/giorgos-koutsouradis-symvoulos-psychikis-ygeias-peristeri-portreto-960.webp","worksFor":{"@id":"#practice"},"telephone":"+30 698 588 0004","email":MAIL,
-  "memberOf":[{"@type":"Organization","name":"Ελληνική Συμβουλευτική Εταιρεία (ΕΛ.Ε.ΣΥ.)"},{"@type":"Organization","name":"Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)"},{"@type":"Organization","name":"European Mentoring & Coaching Council (EMCC Global)"}],"alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
+  "memberOf":[{"@type":"Organization","name":"Ελληνική Συμβουλευτική Εταιρεία (Ε.Ε.Σ.)"},{"@type":"Organization","name":"Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Συνθετικών Ψυχοθεραπευτών (Ε.Ε.ΣΥ.Ψ.)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)"},{"@type":"Organization","name":"European Mentoring & Coaching Council (EMCC Global)"}],"alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
   "hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Πενταετής εκπαίδευση στη Συμβουλευτική και τη Συνθετική Ψυχοθεραπεία","recognizedBy":{"@type":"Organization","name":"European Institute of Counselling & Psychotherapy"}}],
   "knowsAbout":["Συνθετική ψυχοθεραπεία","Συμβουλευτική","Θετική ψυχολογία","Evidence-Based Coaching","Συμβουλευτική σταδιοδρομίας","Αυτοσυμπόνια"]},
  {"@type":"WebSite","@id":"#website","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Κουτσουραδής Γιώργος","Γιώργος Κουτσουράδης","gkoutsouradis",DOMAIN],"url":"https://"+DOMAIN+"/","inLanguage":"el"}]
