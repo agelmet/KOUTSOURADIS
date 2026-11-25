@@ -241,7 +241,7 @@ CRED=[('cap','Συμβουλευτική & Συνθετική Ψυχοθεραπ
       ('sprout','Θετική Ψυχολογία','Εκπαίδευση που εμπλουτίζει τη θεραπευτική μου ματιά.'),
       ('steps','Evidence-Based Coaching','Τεκμηριωμένες μέθοδοι για στόχους και εξέλιξη.')]
 creds=''.join('<div class="cr-c tilt" style="--i:%d">%s<h3>%s</h3><p>%s</p></div>'%(i,icon(a,'ic'),t,d) for i,(a,t,d) in enumerate(CRED))
-MEMB=[('people','Ελληνική Συμβουλευτική Εταιρεία (Ε.Ε.Σ.)','Τακτικό μέλος'),
+MEMB=[('people','Ελληνική Εταιρεία Συμβουλευτικής (Ε.Ε.Σ.)','Τακτικό μέλος'),
       ('rings','Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)','Τακτικό μέλος'),
       ('layers','Ελληνική Εταιρεία Συνθετικών Ψυχοθεραπευτών (Ε.Ε.ΣΥ.Ψ.)','Τακτικό μέλος'),
        ('sprout','Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)','Μέλος'),
@@ -584,7 +584,7 @@ BASE=[
   "knowsAbout":[s['title'] for s in SERVICES]+["Συνθετική ψυχοθεραπεία","Υπαρξιακή ψυχοθεραπεία","Προσωποκεντρική προσέγγιση","Γνωσιακή συμπεριφορική προσέγγιση","Θετική ψυχολογία","Συμβουλευτική σταδιοδρομίας"]},
  {"@type":"Person","@id":"#giorgos","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Georgios Koutsouradis"],"jobTitle":"Σύμβουλος Ψυχικής Υγείας & Συνθετικός Ψυχοθεραπευτής",
   "image":"assets/img/giorgos-koutsouradis-symvoulos-psychikis-ygeias-peristeri-portreto-960.webp","worksFor":{"@id":"#practice"},"telephone":"+30 698 588 0004","email":MAIL,
-  "memberOf":[{"@type":"Organization","name":"Ελληνική Συμβουλευτική Εταιρεία (Ε.Ε.Σ.)"},{"@type":"Organization","name":"Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Συνθετικών Ψυχοθεραπευτών (Ε.Ε.ΣΥ.Ψ.)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)"},{"@type":"Organization","name":"European Mentoring & Coaching Council (EMCC Global)"}],"alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
+  "memberOf":[{"@type":"Organization","name":"Ελληνική Εταιρεία Συμβουλευτικής (Ε.Ε.Σ.)"},{"@type":"Organization","name":"Ελληνική Επιστημονική Εταιρεία Συμβουλευτικής Ομηλίκων (Ε.ΣΥ.ΟΜ)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Συνθετικών Ψυχοθεραπευτών (Ε.Ε.ΣΥ.Ψ.)"},{"@type":"Organization","name":"Ελληνική Εταιρεία Θετικής Ψυχολογίας (Ε.Ε.ΘΕ.ΨΥ.)"},{"@type":"Organization","name":"European Mentoring & Coaching Council (EMCC Global)"}],"alumniOf":[{"@type":"EducationalOrganization","name":"European Institute of Counselling & Psychotherapy"},{"@type":"CollegeOrUniversity","name":"University of Sunderland"}],
   "hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Πενταετής εκπαίδευση στη Συμβουλευτική και τη Συνθετική Ψυχοθεραπεία","recognizedBy":{"@type":"Organization","name":"European Institute of Counselling & Psychotherapy"}}],
   "knowsAbout":["Συνθετική ψυχοθεραπεία","Συμβουλευτική","Θετική ψυχολογία","Evidence-Based Coaching","Συμβουλευτική σταδιοδρομίας","Αυτοσυμπόνια"]},
  {"@type":"WebSite","@id":"#website","name":"Γιώργος Κουτσουραδής","alternateName":["Giorgos Koutsouradis","Γεώργιος Κουτσουραδής","Κουτσουραδής Γιώργος","Γιώργος Κουτσουράδης","gkoutsouradis",DOMAIN],"url":"https://"+DOMAIN+"/","inLanguage":"el"}]
