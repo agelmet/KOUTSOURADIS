@@ -1,0 +1,7 @@
+{
+  "name": "koutsouradis",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Γιώργος Κουτσουραδής — site + admin panel (in-page editor, Netlify Functions + Edge + Blobs; edits never deploy)",
+  "dependencies": { "@netlify/blobs": "^11.0.3" }
+}

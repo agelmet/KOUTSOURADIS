@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="color-scheme" content="light only">
+<title>Πίνακας διαχείρισης · Γιώργος Κουτσουραδής</title>
+<link rel="icon" href="favicon.ico">
+<style>
+:root{color-scheme:light only;--ink:#1d2420;--mut:#5a645e;--line:#e3ddd2;--bg:#f6f2ea;--card:#fffdf9;--rust:#B04828;--green:#2e7d32;--forest:#1e2a23}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,textarea,select{font:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 120px}
+header.top{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--forest);color:#f3e6d3;position:sticky;top:0;z-index:5}
+header.top img{width:40px;height:36px}header.top b{font-weight:600}header.top small{display:block;opacity:.75;font-size:13px}
+header.top .out{margin-left:auto;background:transparent;border:1px solid rgba(243,230,211,.35);color:#f3e6d3;border-radius:12px;padding:9px 12px;min-height:42px;cursor:pointer}
+.trial{background:#fff3cd;color:#5b4300;padding:10px 14px;border-radius:14px;margin:0 0 16px;font-size:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:0 0 16px;box-shadow:0 2px 10px rgba(40,30,20,.04)}
+.card h2{margin:0 0 4px;font-size:19px}.card>p{margin:0 0 14px;color:var(--mut)}
+.btn{appearance:none;border:0;border-radius:14px;padding:12px 16px;min-height:46px;cursor:pointer;background:#ece7de;color:var(--ink);font-weight:600}
+.btn.main{background:var(--rust);color:#fff}.btn.ok{background:var(--green);color:#fff}.btn.del{background:#fbe9e6;color:#9b2d16}.btn.ghost{background:transparent;border:1px solid var(--line)}
+.btn[disabled]{opacity:.5;cursor:default}
+.pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.pages a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 14px;border-radius:14px;background:#f3eee5;color:var(--ink);text-decoration:none;font-weight:500;min-height:50px}
+.pages a::after{content:"✎";opacity:.55}.pages a:hover{background:#ebe3d6}
+.arts{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
+.art{display:flex;align-items:center;gap:12px;padding:12px;border-radius:16px;background:#f7f3ec;border:1px solid var(--line)}
+.art .th{width:56px;height:56px;border-radius:12px;background:#e8e0d2 center/cover no-repeat;flex:none;display:grid;place-items:center;color:var(--mut)}
+.art .tx{flex:1;min-width:0}.art .tx b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.art .tx small{color:var(--mut)}
+.art .hid{opacity:.55}.art .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.art .acts .btn{padding:9px 12px;min-height:42px;font-size:14px}
+label{display:block;font-size:14px;color:var(--mut);margin:14px 0 6px;font-weight:500}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=password]{width:100%;border:1px solid #d6cfc3;border-radius:14px;padding:13px 14px;background:#fff}
+.hint{font-size:13px;color:var(--mut);margin-top:6px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.row .btn{flex:1 1 auto}
+.tools{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:64px;z-index:3;background:var(--card);padding:6px 0}
+.tools button{appearance:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:9px 12px;min-height:44px;cursor:pointer;font-weight:600}
+.rich{min-height:340px;border:1px solid #d6cfc3;border-radius:16px;padding:16px 18px;background:#fff;font:18px/1.65 Georgia,"Noto Serif",serif;outline:none}
+.rich:focus{border-color:var(--rust)}.rich h2{font:600 24px/1.3 Georgia,serif;margin:22px 0 8px}.rich h3{font:600 20px/1.3 Georgia,serif}
+.rich blockquote{margin:16px 0;padding:4px 0 4px 16px;border-left:3px solid var(--rust);font-style:italic}.rich p{margin:0 0 12px}
+.rich:empty::before{content:attr(data-ph);color:#9aa39d}
+.ph{display:flex;gap:12px;align-items:center}.ph img{width:120px;height:90px;object-fit:cover;border-radius:12px;background:#eee}
+.login{max-width:420px;margin:12vh auto;padding:0 16px}.login .card{padding:26px}
+.login h1{margin:8px 0 6px;font-size:22px}.login img{width:64px;height:58px}
+.err{color:#9b2d16;font-size:14px;margin-top:8px;min-height:20px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--forest);color:#fff;padding:13px 18px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.25);z-index:50;max-width:92vw}
+.veil{position:fixed;inset:0;background:rgba(20,24,22,.5);display:flex;align-items:center;justify-content:center;z-index:40;padding:16px}
+.veil .card{max-width:440px;width:100%}
+[hidden]{display:none!important}
+.help li{margin:0 0 8px}
+</style>
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <div class="card">
+    <img src="assets/img/giorgos-koutsouradis-logo-icon.svg" alt="">
+    <h1>Πίνακας διαχείρισης</h1>
+    <p style="color:var(--mut);margin:0 0 10px">Γιώργος Κουτσουραδής · gkoutsouradis.gr</p>
+    <label for="pw">Κωδικός</label>
+    <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Ο κωδικός σας">
+    <div class="err" id="perr"></div>
+    <button class="btn main" id="go" style="width:100%;margin-top:6px">Είσοδος</button>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header class="top"><img src="assets/img/giorgos-koutsouradis-logo-icon.svg" alt=""><div><b>Πίνακας διαχείρισης</b><small>Γιώργος Κουτσουραδής</small></div><button class="out" id="logout">Έξοδος</button></header>
+  <div class="wrap" id="home">
+    <div class="trial" id="trialnote" hidden>Δοκιμή στο draft: ό,τι αλλάζετε εδώ φαίνεται μόνο σε αυτή τη συσκευή. Όταν η ιστοσελίδα ανέβει στο gkoutsouradis.gr, οι αλλαγές θα δημοσιεύονται για όλους.</div>
+
+    <section class="card">
+      <h2>Κείμενα &amp; φωτογραφίες</h2>
+      <p>Διαλέξτε σελίδα. Θα ανοίξει η ίδια η ιστοσελίδα σας: πατήστε σε όποιο κείμενο ή φωτογραφία θέλετε να αλλάξετε, και στο τέλος «Δημοσίευση».</p>
+      <div class="pages" id="pages"></div>
+    </section>
+
+    <section class="card">
+      <h2>Άρθρα</h2>
+      <p>Γράψτε νέο άρθρο ή επικολλήστε το από το Word. Παίρνει αυτόματα δική του σελίδα και εμφανίζεται πρώτο στα «Κείμενα &amp; Άρθρα».</p>
+      <div class="arts" id="arts"></div>
+      <button class="btn main" id="newart">+ Νέο άρθρο</button>
+    </section>
+
+    <section class="card">
+      <h2>Στοιχεία επικοινωνίας</h2>
+      <p>Αλλάζουν μαζί σε όλες τις σελίδες (κουμπιά κλήσης, υποσέλιδο, επικοινωνία).</p>
+      <label for="cphone">Τηλέφωνο</label><input id="cphone" type="tel" placeholder="+30 698 588 0004">
+      <label for="cmail">E-mail</label><input id="cmail" type="email" placeholder="gkoutsouradis.therapist@gmail.com">
+      <div class="row"><button class="btn main" id="savec">Αποθήκευση &amp; δημοσίευση</button></div>
+    </section>
+
+    <section class="card">
+      <h2>Αναίρεση</h2>
+      <p>Κάνατε λάθος; Επαναφέρετε την ιστοσελίδα όπως ήταν πριν από την τελευταία δημοσίευση.</p>
+      <button class="btn ghost" id="undo">Επαναφορά προηγούμενης δημοσίευσης</button>
+    </section>
+
+    <section class="card help">
+      <h2>Πώς δουλεύει</h2>
+      <ol>
+        <li><b>Κείμενο:</b> πατήστε πάνω του, γράψτε, πατήστε «✓ Τέλος». Με τα κουμπιά <b>B</b> και <i>I</i> κάνετε έντονα ή πλάγια, με το 🔗 προσθέτετε σύνδεσμο.</li>
+        <li><b>Φωτογραφία:</b> πατήστε πάνω της → «Επιλογή νέας φωτογραφίας» από το κινητό ή τον υπολογιστή → «Εφαρμογή».</li>
+        <li><b>Μπλοκ</b> (συνέδριο, κάρτα, ερώτηση, σύλλογος, φωτογραφία συνεδρίου): πατήστε μέσα του. Εμφανίζονται τα κουμπιά <b>⠿ Μετακίνηση</b> (σύρετε για αλλαγή σειράς), <b>⧉</b> (αντίγραφο), <b>✕</b> (διαγραφή) και <b>+ Προσθήκη νέου</b>.</li>
+        <li>Στο τέλος πατήστε <b>Δημοσίευση</b>. Οι αλλαγές φαίνονται αμέσως στην ιστοσελίδα.</li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="wrap" id="editor" hidden>
+    <button class="btn ghost" id="back">← Πίσω</button>
+    <section class="card" style="margin-top:14px">
+      <h2 id="etitle">Νέο άρθρο</h2>
+      <label for="atitle">Τίτλος *</label><input id="atitle" type="text" placeholder="π.χ. Το πένθος στην τρίτη ηλικία">
+      <label for="asub">Υπότιτλος</label><input id="asub" type="text" placeholder="Μια φράση που εξηγεί το θέμα">
+      <label for="atag">Θέμα</label><input id="atag" type="text" placeholder="π.χ. Τρίτη ηλικία">
+      <label for="aquote">Φράση για την κάρτα του άρθρου</label><input id="aquote" type="text" placeholder="π.χ. «Πώς μένω κοντά στον εαυτό μου;»">
+      <div class="hint">Εμφανίζεται μεγάλη πάνω στην κάρτα, αν δεν βάλετε φωτογραφία.</div>
+      <label for="adate">Ημερομηνία</label><input id="adate" type="date">
+      <label>Φωτογραφία (προαιρετικά)</label>
+      <div class="ph"><img id="aimg" alt="" hidden><button class="btn" id="apick">Επιλογή φωτογραφίας</button><button class="btn del" id="anoimg" hidden>Χωρίς φωτογραφία</button><input type="file" id="afile" accept="image/*" hidden></div>
+      <label for="aalt">Περιγραφή φωτογραφίας (για τη Google)</label><input id="aalt" type="text">
+      <label>Κείμενο *</label>
+      <div class="tools" id="tools">
+        <button data-c="p" title="Κανονικό κείμενο">¶ Κείμενο</button><button data-c="h2" title="Υπότιτλος">H Υπότιτλος</button>
+        <button data-c="bold"><b>B</b></button><button data-c="italic"><i>I</i></button>
+        <button data-c="ul">• Λίστα</button><button data-c="quote">❝ Παράθεση</button><button data-c="link">🔗</button>
+      </div>
+      <div class="rich" id="abody" contenteditable="true" data-ph="Γράψτε εδώ ή επικολλήστε το κείμενο από το Word…"></div>
+      <div class="row">
+        <button class="btn ghost" id="aprev">Προεπισκόπηση</button>
+        <button class="btn ok" id="asave">Αποθήκευση &amp; δημοσίευση</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script type="module">
+import { slugify, clean, visibleArticles, articleUrl, ORIG } from "./assets/js/gk-core.mjs";
+import { PAGES } from "./assets/js/gk-pages.mjs";
+const $ = (s) => document.querySelector(s);
+const TRIAL_SHA = "edae0d60c0547d8c3e5582da0830215bb0ad54fd027fb351b30f98836e29e67f";
+let LIVE = false; try { LIVE = (await fetch("/api/status", { cache: "no-store" })).ok; } catch {}
+let PASS = sessionStorage.getItem("gk-pass") || "";
+const toast = (m, ms = 2600) => { const n = document.createElement("div"); n.className = "toast"; n.textContent = m; document.body.appendChild(n); setTimeout(() => n.remove(), ms); };
+const sha = async (t) => [...new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)))].map((x) => x.toString(16).padStart(2, "0")).join("");
+function ask(title, text, yes, cls = "del") { return new Promise((res) => { const v = document.createElement("div"); v.className = "veil"; v.innerHTML = `<div class="card"><h2></h2><p></p><div class="row"><button class="btn ghost" data-n>Όχι</button><button class="btn ${cls}" data-y></button></div></div>`; v.querySelector("h2").textContent = title; v.querySelector("p").textContent = text; v.querySelector("[data-y]").textContent = yes; document.body.appendChild(v); v.onclick = (e) => { if (e.target.closest("[data-y]")) { v.remove(); res(true); } else if (e.target === v || e.target.closest("[data-n]")) { v.remove(); res(false); } }; }); }
+
+async function load() {
+  if (LIVE) { try { return await (await fetch("/api/content", { cache: "no-store" })).json(); } catch { return {}; } }
+  try { return JSON.parse(localStorage.getItem("gk-trial") || "{}"); } catch { return {}; }
+}
+async function save(c, msg = "Δημοσιεύτηκε! ✓") {
+  if (LIVE) {
+    try { const r = await fetch("/api/save", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ pass: PASS, action: "publish", content: c }) }); const j = await r.json(); if (!j.ok) throw j; }
+    catch (e) { toast(e && e.error === "pass" ? "Ο κωδικός δεν ισχύει πια — συνδεθείτε ξανά." : "Δεν έγινε. Ελέγξτε τη σύνδεση και ξαναδοκιμάστε.", 4000); return false; }
+  } else { try { localStorage.setItem("gk-trial", JSON.stringify(c)); } catch { toast("Η δοκιμή γέμισε (πολλές φωτογραφίες).", 4000); return false; } }
+  toast(msg); return true;
+}
+
+/* ---- login ---- */
+async function login() {
+  const p = $("#pw").value.trim(); if (!p) return; $("#go").disabled = true; $("#perr").textContent = "";
+  let ok = false;
+  if (LIVE) { try { ok = (await (await fetch("/api/save", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ pass: p, action: "login" }) })).json()).ok; } catch {} }
+  else ok = (await sha(p)) === TRIAL_SHA;
+  $("#go").disabled = false;
+  if (!ok) { $("#perr").textContent = "Λάθος κωδικός."; return; }
+  PASS = p; sessionStorage.setItem("gk-pass", p);
+  const back = new URLSearchParams(location.search).get("back"); if (back && /^[\w-]+\.html\?edit$/.test(back)) { location.href = back; return; }
+  start();
+}
+$("#go").onclick = login; $("#pw").onkeydown = (e) => e.key === "Enter" && login();
+$("#logout").onclick = () => { sessionStorage.removeItem("gk-pass"); location.reload(); };
+
+/* ---- home ---- */
+let C = {};
+async function start() {
+  $("#login").hidden = true; $("#app").hidden = false; $("#trialnote").hidden = LIVE;
+  $("#pages").innerHTML = PAGES.map((p) => `<a href="${p.url}?edit">${p.name}</a>`).join("");
+  C = await load(); C.pages = C.pages || {}; C.articles = C.articles || []; C.contact = C.contact || {};
+  $("#cphone").value = C.contact.phone || ORIG.phone; $("#cmail").value = C.contact.email || ORIG.email;
+  $("#undo").hidden = !LIVE; if (!LIVE) { $("#undo").hidden = false; $("#undo").textContent = "Διαγραφή όλων των δοκιμαστικών αλλαγών"; }
+  renderArts();
+}
+function renderArts() {
+  const list = [...C.articles].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
+  const fixed = `<div class="art"><div class="th">✎</div><div class="tx"><b>Αυτοσυμπόνια στην τρίτη ηλικία</b><small>Το πρώτο σας άρθρο · αλλάζει μέσα στη σελίδα του</small></div><div class="acts"><a class="btn" href="arthro-aftosympnonia-triti-ilikia.html?edit">Επεξεργασία</a></div></div>`;
+  $("#arts").innerHTML = list.map((a) => `<div class="art${a.hidden ? " hid" : ""}" data-id="${a.id}"><div class="th" style="${a.img ? `background-image:url('${a.img}')` : ""}">${a.img ? "" : "✎"}</div><div class="tx"><b></b><small>${a.date ? new Date(a.date).toLocaleDateString("el-GR") : ""}${a.hidden ? " · κρυμμένο" : ""}</small></div><div class="acts"><button class="btn" data-a="edit">Επεξεργασία</button><button class="btn" data-a="hide">${a.hidden ? "Εμφάνιση" : "Απόκρυψη"}</button><button class="btn del" data-a="del">Διαγραφή</button></div></div>`).join("") + fixed;
+  list.forEach((a) => { $(`.art[data-id="${a.id}"] b`).textContent = a.title; });
+}
+$("#arts").onclick = async (e) => {
+  const b = e.target.closest("button[data-a]"); if (!b) return; const id = b.closest(".art").dataset.id; const a = C.articles.find((x) => x.id === id); if (!a) return;
+  if (b.dataset.a === "edit") return openEditor(a);
+  if (b.dataset.a === "hide") { a.hidden = !a.hidden; if (await save(C, a.hidden ? "Το άρθρο κρύφτηκε." : "Το άρθρο εμφανίζεται ξανά.")) renderArts(); }
+  if (b.dataset.a === "del" && (await ask("Διαγραφή άρθρου;", `«${a.title}» — δεν γίνεται επαναφορά.`, "Ναι, διαγραφή"))) { C.articles = C.articles.filter((x) => x.id !== id); if (await save(C, "Το άρθρο διαγράφηκε.")) renderArts(); }
+};
+$("#savec").onclick = async () => {
+  const phone = $("#cphone").value.trim(), email = $("#cmail").value.trim();
+  if (phone.replace(/\D/g, "").length < 10) return toast("Το τηλέφωνο θέλει 10 ψηφία.");
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return toast("Ελέγξτε το e-mail.");
+  C.contact = { phone, email }; await save(C);
+};
+$("#undo").onclick = async () => {
+  if (!LIVE) { if (await ask("Διαγραφή δοκιμής;", "Θα σβηστούν όλες οι δοκιμαστικές αλλαγές αυτής της συσκευής.", "Ναι")) { localStorage.removeItem("gk-trial"); Object.keys(localStorage).filter((k) => k.startsWith("gk-pend-")).forEach((k) => localStorage.removeItem(k)); toast("Η δοκιμή καθάρισε."); start(); } return; }
+  if (!(await ask("Επαναφορά;", "Η ιστοσελίδα θα γυρίσει όπως ήταν πριν από την τελευταία δημοσίευση.", "Ναι, επαναφορά", "main"))) return;
+  try { const j = await (await fetch("/api/save", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ pass: PASS, action: "undo" }) })).json(); toast(j.ok ? "Έγινε επαναφορά." : "Δεν υπάρχει προηγούμενη δημοσίευση."); start(); } catch { toast("Δεν έγινε. Ξαναδοκιμάστε."); }
+};
+
+/* ---- article editor ---- */
+let A = null, imgNew = null;
+$("#newart").onclick = () => openEditor(null);
+$("#back").onclick = async () => { if (dirty && !(await ask("Έξοδος χωρίς αποθήκευση;", "Οι αλλαγές του άρθρου θα χαθούν.", "Ναι, έξοδος"))) return; $("#editor").hidden = true; $("#home").hidden = false; scrollTo(0, 0); };
+let dirty = false; ["#atitle", "#asub", "#atag", "#aquote", "#adate", "#aalt"].forEach((s) => $(s).addEventListener("input", () => (dirty = true))); $("#abody").addEventListener("input", () => (dirty = true));
+function openEditor(a) {
+  A = a ? { ...a } : { id: "a" + Date.now().toString(36), date: new Date().toISOString().slice(0, 10) }; imgNew = null; dirty = false;
+  $("#etitle").textContent = a ? "Επεξεργασία άρθρου" : "Νέο άρθρο";
+  $("#atitle").value = A.title || ""; $("#asub").value = A.sub || ""; $("#atag").value = A.tag || ""; $("#aquote").value = A.quote || ""; $("#adate").value = A.date || ""; $("#aalt").value = A.alt || "";
+  $("#abody").innerHTML = A.body || ""; showImg(A.img);
+  $("#home").hidden = true; $("#editor").hidden = false; scrollTo(0, 0);
+}
+function showImg(src) { $("#aimg").hidden = !src; if (src) $("#aimg").src = src; $("#anoimg").hidden = !src; $("#apick").textContent = src ? "Άλλη φωτογραφία" : "Επιλογή φωτογραφίας"; }
+$("#apick").onclick = () => $("#afile").click();
+$("#anoimg").onclick = () => { A.img = ""; imgNew = null; showImg(""); dirty = true; };
+$("#afile").onchange = () => {
+  const f = $("#afile").files[0]; if (!f) return; const im = new Image();
+  im.onload = () => { const max = LIVE ? 2000 : 1200, s = Math.min(1, max / Math.max(im.naturalWidth, im.naturalHeight)); const c = document.createElement("canvas"); c.width = Math.round(im.naturalWidth * s); c.height = Math.round(im.naturalHeight * s); c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+    c.toBlob((b) => { imgNew = { blob: b, url: c.toDataURL("image/webp", LIVE ? 0.85 : 0.75) }; showImg(imgNew.url); dirty = true; }, "image/webp", 0.85); };
+  im.onerror = () => toast("Δεν άνοιξε αυτή η φωτογραφία. Δοκιμάστε JPG ή PNG."); im.src = URL.createObjectURL(f);
+};
+/* rich text: only clean tags survive (also when pasting from Word) */
+const OK = { P: 1, H2: 1, H3: 1, B: 1, STRONG: 1, I: 1, EM: 1, U: 1, A: 1, UL: 1, OL: 1, LI: 1, BLOCKQUOTE: 1, BR: 1 };
+function cleanRich(html) {
+  const doc = new DOMParser().parseFromString(`<div>${html}</div>`, "text/html"); const root = doc.body.firstChild;
+  (function walk(n) { [...n.childNodes].forEach((k) => {
+    if (k.nodeType === 8) return k.remove(); if (k.nodeType !== 1) return;
+    walk(k);
+    if (!OK[k.tagName]) { if (/^(DIV|H1|H4|H5|H6|SECTION|ARTICLE|TABLE|TR)$/.test(k.tagName)) { const p = doc.createElement(k.tagName === "H1" ? "h2" : "p"); p.append(...k.childNodes); k.replaceWith(p); } else k.replaceWith(...k.childNodes); return; }
+    [...k.attributes].forEach((a) => { if (!(k.tagName === "A" && a.name === "href")) k.removeAttribute(a.name); });
+    if (k.tagName === "A") { const h = k.getAttribute("href") || ""; if (!/^(https?:|mailto:|tel:|#|[\w-]+\.html)/.test(h)) k.removeAttribute("href"); else if (/^https?:/.test(h)) { k.setAttribute("target", "_blank"); k.setAttribute("rel", "noopener"); } }
+  }); })(root);
+  // loose text at the top level becomes paragraphs
+  let out = ""; let buf = "";
+  [...root.childNodes].forEach((k) => { const inline = k.nodeType === 3 || /^(B|STRONG|I|EM|U|A|BR)$/.test(k.tagName); if (inline) buf += k.nodeType === 3 ? k.textContent.replace(/</g, "&lt;") : k.outerHTML; else { if (buf.trim()) out += `<p>${buf.trim()}</p>`; buf = ""; out += k.outerHTML; } });
+  if (buf.trim()) out += `<p>${buf.trim()}</p>`;
+  return clean(out.replace(/<p>(\s|&nbsp;|<br>)*<\/p>/g, ""));
+}
+$("#abody").addEventListener("paste", (e) => { e.preventDefault(); const d = e.clipboardData; const h = d.getData("text/html"); const t = d.getData("text/plain");
+  const html = h ? cleanRich(h) : t.split(/\n{2,}|\r\n\r\n/).map((p) => `<p>${p.replace(/</g, "&lt;").replace(/\n/g, "<br>")}</p>`).join(""); document.execCommand("insertHTML", false, html); });
+$("#tools").addEventListener("mousedown", (e) => e.preventDefault());
+$("#tools").onclick = (e) => {
+  const c = e.target.closest("button")?.dataset.c; if (!c) return; $("#abody").focus();
+  if (c === "p") document.execCommand("formatBlock", false, "p"); if (c === "h2") document.execCommand("formatBlock", false, "h2");
+  if (c === "bold" || c === "italic") document.execCommand(c); if (c === "ul") document.execCommand("insertUnorderedList"); if (c === "quote") document.execCommand("formatBlock", false, "blockquote");
+  if (c === "link") { const sel = getSelection(); if (!sel.toString()) return toast("Επιλέξτε πρώτα τις λέξεις του συνδέσμου."); const r = sel.getRangeAt(0).cloneRange();
+    const v = document.createElement("div"); v.className = "veil"; v.innerHTML = `<div class="card"><h2>Σύνδεσμος</h2><input type="text" placeholder="https://…"><div class="row"><button class="btn ghost" data-n>Άκυρο</button><button class="btn main" data-y>OK</button></div></div>`; document.body.appendChild(v); v.querySelector("input").focus();
+    v.onclick = (ev) => { if (ev.target.closest("[data-y]")) { let u = v.querySelector("input").value.trim(); if (u && !/^(https?:|mailto:|tel:)/.test(u)) u = "https://" + u; $("#abody").focus(); sel.removeAllRanges(); sel.addRange(r); if (u) document.execCommand("createLink", false, u); v.remove(); } else if (ev.target === v || ev.target.closest("[data-n]")) v.remove(); }; }
+};
+function collect() {
+  const title = $("#atitle").value.trim(); const body = cleanRich($("#abody").innerHTML);
+  if (!title) { toast("Γράψτε τίτλο."); return null; } if (!body.replace(/<[^>]+>/g, "").trim()) { toast("Γράψτε το κείμενο του άρθρου."); return null; }
+  const a = { ...A, title, sub: $("#asub").value.trim(), tag: $("#atag").value.trim(), quote: $("#aquote").value.trim(), date: $("#adate").value || new Date().toISOString().slice(0, 10), alt: $("#aalt").value.trim(), body };
+  if (!a.slug) { let s = slugify(title); const used = new Set(C.articles.filter((x) => x.id !== a.id).map((x) => x.slug).concat(["aftosympnonia-triti-ilikia"])); let n = 2, b = s; while (used.has(s)) s = `${b}-${n++}`; a.slug = s; }
+  return a;
+}
+$("#asave").onclick = async () => {
+  const a = collect(); if (!a) return; $("#asave").disabled = true; $("#asave").textContent = "Αποθήκευση…";
+  try {
+    if (imgNew) {
+      if (LIVE) { const r = await fetch("/api/upload", { method: "POST", headers: { "x-pass": PASS, "content-type": "image/webp" }, body: imgNew.blob }); const j = await r.json(); if (!j.ok) throw 0; a.img = j.url; }
+      else a.img = imgNew.url;
+    }
+    const i = C.articles.findIndex((x) => x.id === a.id); if (i >= 0) C.articles[i] = a; else C.articles.push(a);
+    if (await save(C, "Το άρθρο δημοσιεύτηκε! ✓")) { A = a; imgNew = null; dirty = false; renderArts(); $("#editor").hidden = true; $("#home").hidden = false; scrollTo(0, 0); }
+  } catch { toast("Το ανέβασμα της φωτογραφίας δεν έγινε. Ξαναδοκιμάστε."); }
+  $("#asave").disabled = false; $("#asave").textContent = "Αποθήκευση & δημοσίευση";
+};
+$("#aprev").onclick = () => {
+  const a = collect(); if (!a) return; if (imgNew) a.img = imgNew.url;
+  const tmp = { ...C, articles: [...C.articles.filter((x) => x.id !== a.id), { ...a, hidden: false }] };
+  if (LIVE) { toast("Πατήστε «Αποθήκευση & δημοσίευση» και μετά ανοίξτε το άρθρο από τα «Κείμενα & Άρθρα».", 4500); return; }
+  localStorage.setItem("gk-trial", JSON.stringify(tmp)); window.open(articleUrl(a, false), "_blank");
+  setTimeout(() => localStorage.setItem("gk-trial", JSON.stringify(C)), 4000);
+};
+
+if (PASS) start(); else { $("#login").hidden = false; $("#pw").focus(); }
+</script>
+</body>
+</html>

@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /_src/
+Disallow: /admin.html
+Disallow: /arthro-neo.html
+Disallow: /odigos-panel/
 
 Sitemap: https://gkoutsouradis.gr/sitemap.xml
