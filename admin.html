@@ -57,7 +57,7 @@ input[type=text],input[type=email],input[type=tel],input[type=date],input[type=p
     <h1>Πίνακας διαχείρισης</h1>
     <p style="color:var(--mut);margin:0 0 10px">Γιώργος Κουτσουραδής · gkoutsouradis.gr</p>
     <label for="pw">Κωδικός</label>
-    <input id="pw" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Ο κωδικός σας">
+    <input id="pw" name="gk-code" type="text" inputmode="numeric" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore placeholder="Ο κωδικός σας" style="-webkit-text-security:disc;text-security:disc">
     <div class="err" id="perr"></div>
     <button class="btn main" id="go" style="width:100%;margin-top:6px">Είσοδος</button>
   </div>
@@ -282,7 +282,7 @@ $("#aprev").onclick = () => {
   setTimeout(() => localStorage.setItem("gk-trial", JSON.stringify(C)), 4000);
 };
 
-if (PASS) start(); else { $("#login").hidden = false; $("#pw").focus(); }
+if (PASS) start(); else { $("#login").hidden = false; $("#pw").value = ""; setTimeout(() => { if (document.activeElement !== $("#pw") || !$("#pw").dataset.typed) $("#pw").value = ""; }, 400); $("#pw").addEventListener("input", () => ($("#pw").dataset.typed = 1)); $("#pw").focus(); }
 </script>
 </body>
 </html>
