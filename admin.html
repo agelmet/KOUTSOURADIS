@@ -169,7 +169,7 @@ async function login() {
   const back = new URLSearchParams(location.search).get("back"); if (back && /^[\w-]+\.html\?edit$/.test(back)) { location.href = back; return; }
   start();
 }
-$("#go").onclick = login; $("#pw").onkeydown = (e) => e.key === "Enter" && login();
+$("#go").onclick = login; $("#pw").addEventListener("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); login(); } });
 $("#logout").onclick = () => { sessionStorage.removeItem("gk-pass"); location.reload(); };
 
 /* ---- home ---- */
